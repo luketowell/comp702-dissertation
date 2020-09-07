@@ -132,7 +132,7 @@ degree of this or any other university or degree-awarding body.
 
 %%%%  INTRODUCTION
 
-\chapter{Project Introduction}\label{chap:intro}
+\chapter{Introduction}\label{chap:intro}
 
 \section{Summary of Project Proposal}
 
@@ -190,12 +190,18 @@ project which essentially means that they are not essential to the project but c
 I have also added labels to each of the cards so that I am easily able to identify which cards relate to each part of the application.
 This has made it easier to look up which cards need working on and which features still require development. 
 
+
+\chapter{Background}
+
 \chapter{Final Outcomes}
+
+
+% TODO: CITE SPECIFICATION AND DESIGN DOCUMENT
+\chapter{Design}
 The aim of this project from the outset was to create a software system which makes use of multiple applications
  to give the in store user a clean and easy to use way of managing in-store waste. In the following chapter I 
  discuss what has been produced and what I will discuss in my dissertation.
 
-% TODO: CITE SPECIFICATION AND DESIGN DOCUMENT
 \section{User Interface Design}
 
 As part of the development of the system a key to ensuring the ease of use of the application was to take care and attention when
@@ -226,10 +232,11 @@ The database schema below (See Figure ~\ref{fig:DBSchema}) shows the final desig
 In my dissertation I will go into more information about the challenges which arose whilst I was implementing the database  and the considerations
 which I needed to make in order to ensure that the design was suitable for the software system.
 
-\section{Developed Applications}
+
+\chapter{Realisation}
 In the following sections I will discuss the applications which where developed as part of the Xpire system.
 
-\subsection{Mobile Application}
+\section{Mobile Application}
 The mobile application of Xpire is the main part of the system which is used by the front of house store colleagues who are working on the shop floor.
 The application has been written using the React-Native JavaScript framework which means that it is compatible with both android and IOs operating systems.
 This means the app can be used on both in store devices as well as colleague and managers personal devices as part of the BYOD (Bring Your Own Device) scheme. 
@@ -248,7 +255,7 @@ Figure ~\ref{fig:IOSScreenshots} shows an example of the IOs version of the apps
     \label{fig:IOSScreenshots}
 \end{figure}
 
-\subsection{Web Application}
+\section{Web Application}
 The web application of the system has been written in the React JavaScript framework. The functionality of the application is largely the same as the mobile application however because the web view is available on a larger screen size I have used this to my advantage and included slightly more information for the user. 
 The functionality for the web application also differs slightly by offering a different view for managers who are able to view the items and information of other stores as well as their own. 
 Figure ~\ref{fig:WebUi} is a screen shot of the application which includes the functionality to change stores.
@@ -260,13 +267,13 @@ Figure ~\ref{fig:WebUi} is a screen shot of the application which includes the f
     \label{fig:WebUi}
 \end{figure}
 
-\subsection{Web Services}
+\section{Web Services}
 In order to manage the communication between the front end applications and the database I have written web services in Java using the Spring Boot framework. 
 The application has been designed using the "repository pattern" which is discussed in the Gang of Four Book, Design Patterns: Elements of Reusable Object-Oriented Software\cite{gamma1994design} which creates an interface between the front end user and the database.
 
 In my dissertation I plan on describing how the web services have been written and the technology which has been used in order to ensure that the services are easy to use and deploy.
 
-\chapter{Project Evaluation}
+\chapter{Evaluation}
 \section {Successes of the project}
 Overall based on the aims of the project I believe that the project has been a success. I have produced a system which comprises of several different applications whilst making use of several different programming languages and design concepts. 
  Whilst there have been issues over the course of the project I have received positive feedback from the Project Manager colleagues within ASDA who have been overseeing the project.
@@ -293,19 +300,26 @@ Unfortunately due to the limitations that have been mentioned above and will be 
 Because of this I have had to re-assess how I will gather feedback on the system. The project will now be assessed by ASDA colleagues and managers based on demonstrations of the application within different user scenarios. 
 In my dissertation I will discuss the feedback which I receive and summarise the positives and potential improvements that the ASDA colleagues raise in their feedback.
 
+\chapter{Learning Points}
+
+\chapter{Professional Issues}
+
+\chapter{Conclusions}
+
 %%%%   REFERENCES
 
 %%%%  Section for references, using the \bibitem directive to 
 %%%%  specify labels used to cite sources in the document.  
+
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliography{bibliography}
+\bibliographystyle{plain}
+
+
+%%%%   APPENDICES
 \newpage
 \addcontentsline{toc}{chapter}{Appendices}
 \begin{appendix}
 \end{appendix}
-
-\bibliography{bibliography}
-\bibliographystyle{plain}
-
-%%%%   APPENDICES
-
 
 \end{document}
