@@ -1,5 +1,9 @@
 \begin{thebibliography}{1}
 
+\bibitem{asda-food-waste}
+ASDA.
+\newblock Asda food waste, 2020.
+
 \bibitem{trello}
 Atlassian.
 \newblock Trello project management software, 2020.
@@ -13,5 +17,21 @@ E.~Gamma, R.~Helm, R.~Johnson, and J.~Vlissides.
 \newblock {\em Design Patterns: Elements of Reusable Object-Oriented Software}.
 \newblock Addison-Wesley Professional Computing Series. Pearson Education,
   1994.
+
+\bibitem{too-good-to-go}
+Too Good~To Go.
+\newblock Too good to go - about us, 2020.
+
+\bibitem{totalctrl}
+TotalCtrl.
+\newblock Totalctrl food waste solutions, 2020.
+
+\bibitem{wrap-food-drink}
+WRAP.
+\newblock Wrap: Food and drink, 2020.
+
+\bibitem{wrapvision}
+WRAP.
+\newblock Wrap: Vision, 2020.
 
 \end{thebibliography}
