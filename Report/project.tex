@@ -170,6 +170,7 @@ causes within the local community as part of the ASDA commitment to engage and a
 \\
 \\
 The key goals of the developed system are to include:
+% TODO: turn into an actual list
 \\
 - An application which will direct colleagues to which items need to be marked down.
 \\
@@ -278,13 +279,13 @@ use of current systems and architecture ensuring that from the beginning the app
 work inside the ASDA ecosystem without the need for any extra development costs to make use of
 a third party application. 
 
-\subsection{Project requirements gathering}
+\section{Project requirements gathering}
 
 As well as looking at examples of other applications which offer similar functionality to my proposed
- application I also gathered requirements from ASDA employees who are familiar with the requirements 
- of the project. Each of these requirements where broken down into development cards and documented on
-  the project Trello board. Each card contains the aim of the card, the requirement that the development
-   will provide and the functionality which will be available once the card has been completed. 
+application I also gathered requirements from ASDA employees who are familiar with the requirements 
+of the project. Each of these requirements where broken down into development cards and documented on
+the project Trello board. Each card contains the aim of the card, the requirement that the development
+will provide and the functionality which will be available once the card has been completed. 
 
 %    TODO: insert a figure of a well documented card
 
@@ -293,7 +294,31 @@ As well as looking at examples of other applications which offer similar functio
 % TODO: Insert potential notes from confluence. 
 
 \chapter{Ethical Use Of Data}
-\section {Data Used Within The Application}
+\section{Data used in the system}
+The data used in the system will be item based information which will include a unique identifier
+for an item, the expiry date / use by date of the item, the product name, the producer of the item, 
+the store quantity of an item and an image of the item. 
+All of this data will be available from internal ASDA databases. 
+\\
+\\
+Other data which the application will make use of are the request details of requests 
+within the system. This data is collected for the purpose of troubleshooting and monitoring
+and alerting of potential issues within the application. The data will include, Request Type,
+Request Content, Timestamp, Response Content, Response Information and Request Origin.
+   
+   
+\section{Ethical Use of Data}
+The data that is gathered in my application is not human related data.
+The application only deals with the gathering of information on items and stores.
+No user identifiable data is used therefore I have agreed with my supervisor that
+there is no need to need to complete the Ethical Approval Form.
+\\
+\\
+The only human data that will be used within this project is the feedback and opinions
+of employees for ASDA which will be used in order to assess wether the goals of the 
+project have been met. The consent of those whose feedback I will be using will be 
+collected as and when it is required and Each individual will complete a consent form
+prior to their opinions being included in the final report.
 
 
 % TODO: CITE SPECIFICATION AND DESIGN DOCUMENT
@@ -339,7 +364,13 @@ which I needed to make in order to ensure that the design was suitable for the s
 \chapter{Realisation}
 In the following sections I will discuss the applications which where developed as part of the Xpire system.
 
-\section{Mobile Application}
+\section{Front End Applications}
+12 factor app
+management of different environment variables and configurations
+abstraction
+componentisation
+
+\subsection{Mobile Application}
 The mobile application of Xpire is the main part of the system which is used by the front of house store colleagues who are working on the shop floor.
 The application has been written using the React-Native JavaScript framework which means that it is compatible with both android and IOs operating systems.
 This means the app can be used on both in store devices as well as colleague and managers personal devices as part of the BYOD (Bring Your Own Device) scheme. 
@@ -351,6 +382,8 @@ The application also includes a barcode scanner which enables users to easily sc
 Figure ~\ref{fig:IOSScreenshots} shows an example of the IOs version of the apps user interface. These screenshots can be directly compared against Figure ~\ref{fig:UIDesignExample}
  to show how the designs of the application have been implemented in the final versions of the application.
 
+User Scenarios
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=10cm]{./assets/images/appUI.png}
@@ -358,7 +391,7 @@ Figure ~\ref{fig:IOSScreenshots} shows an example of the IOs version of the apps
     \label{fig:IOSScreenshots}
 \end{figure}
 
-\section{Web Application}
+\subsection{Web Application}
 The web application of the system has been written in the React JavaScript framework. The functionality of the application is largely the same as the mobile application however because the web view is available on a larger screen size I have used this to my advantage and included slightly more information for the user. 
 The functionality for the web application also differs slightly by offering a different view for managers who are able to view the items and information of other stores as well as their own. 
 Figure ~\ref{fig:WebUi} is a screen shot of the application which includes the functionality to change stores.
@@ -374,7 +407,16 @@ Figure ~\ref{fig:WebUi} is a screen shot of the application which includes the f
 In order to manage the communication between the front end applications and the database I have written web services in Java using the Spring Boot framework. 
 The application has been designed using the "repository pattern" which is discussed in the Gang of Four Book, Design Patterns: Elements of Reusable Object-Oriented Software\cite{gamma1994design} which creates an interface between the front end user and the database.
 
-In my dissertation I plan on describing how the web services have been written and the technology which has been used in order to ensure that the services are easy to use and deploy.
+Documentation of the web services.
+Swagger
+
+Management of Variables
+
+Deployment of Web Services
+
+
+
+\section{Database}
 
 \section{Testing of the Applications}
 
@@ -389,7 +431,7 @@ colleague time spent checking waste stock and an overall increase in colleague p
 In the dissertation which will follow this report I plan on going through the individual aspects of the project and identifying how I believe that they have been positively addressed.
 
 \section {Challenges of the Project}
-Throughout the project there have been issues which have arisen an the solution has been developed. In the early stages of the project it was identified that due to data security and authentication security utilised by ASDA I would be unable to make use of data and Authentication systems. This has presented various different issues which include:
+Throughout the project there have been issues which have arisen as the solution has been developed. In the early stages of the project it was identified that due to data security and authentication security utilised by ASDA I would be unable to make use of ASDAs data and authentication systems. This has presented various different issues which include:
 \begin{itemize}
     \item Data availability
     \item User Authentication
@@ -405,28 +447,143 @@ Unfortunately due to the limitations that have been mentioned above and will be 
 Because of this I have had to re-assess how I will gather feedback on the system. The project will now be assessed by ASDA colleagues and managers based on demonstrations of the application within different user scenarios. 
 In my dissertation I will discuss the feedback which I receive and summarise the positives and potential improvements that the ASDA colleagues raise in their feedback.
 
+% Add in feedback and critical analysis of feedback from Philippa and Holly. Must be anonymous. talk about current implementation and differences between solution developed.
+% talk about functionality that is positive and the feedback given
+% talk about improvements that are raised and relate them to the potential future works. 
+
 \chapter{Learning Points}
+Over the period of the project several technologies have been used within the software system
+which I have either used in a limited capacity or I have not used at all. In this chapter I will
+detail which technologies I have had to learn in order to complete the project, which skills and 
+technologies I will make use of again in the future and what I will avoid the next time I have to 
+complete a similar project.
+
 % Java Spring Boot
-% Repository Pattern
-% Design Patterns
+\section{Java}
+The web services are a central part of the system. I decided that in order to write a truly scalable
+and enterprise worthy application I would write the RESTful web services in Java using the Spring Boot framework.
+\\
+\\
+I chose Spring Boot based on the fact that it a widely adopted java framework which is already utilised
+within the ASDA / Wal-Mart ecosystem. I have previously worked on applications which make use of spring
+boot however I have never initialised an application or written an entire suite or RESTful services.
+\\
+\\
+Spring Boot was an interesting framework to work with as there was plenty of documentation available online,
+the process of initialising the application was straightforward using the Spring Boot Initializr TODO:insert reference to Initializr. 
+Spring Boot is an opinionated object orientated framework which is very different to my typical background 
+of JavaScript Node applications. In order to efficiently make use of Spring Boot I have had to learn the nuances
+of the framework such as how to architect and organise the application structure as well as 
+researching the various design patterns to use when creating the application. 
+\\
+\\
+After thorough research into object orientated design patterns I decided that because I was integrating my endpoints
+with a SQL database the best design pattern for the application would be the "Repository Pattern". This is because 
+via using the repository pattern the query logic for retrieving databases was easily abstracted out from the other 
+application code. It also ensures that the objects which are being submitted to the services and written to the database
+match the format that the database is expecting.
+\\
+\\
+
+Overall I would say that the use of Java Spring Boot was really beneficial to the project and my own personal development. I have furthered 
+my knowledge of creating RESTful services and object orientated programming. The use of Spring Boot has forced me to look into development 
+principles and design patterns that I haven't previously been exposed to which will improve my knowledge of software engineer and improve 
+the quality of the applications that I write in the future.
+
 
 % SQL and Database integrations
-% Table Relationships
-% Normalisation
+\section{Database Implementation}
+In other applications I have made use of SQL databases however normally these databases have been designed and created by other qualified data architects.
+Throughout this project I have designed and implemented my database structure which has presented me with several opportunities to further my knowledge.
+I have needed to research how to efficiently design a database in order to reduce duplication of data and to ensure that the data was easily queryable by the applications. 
+One of the main learning points which I had no previous experience was the creation of foreign keys and table relationships.
+In order to successfully create an efficient database I have had to research and consider how each table is related to each other 
+and how I would be able to effectively store applicable data in the database.
+In order to design an effective database structure I looked into documentation online as well as making use of online platforms
+to assist with a visual DB schema which assisted me by presenting a visual diagram which was easier to understand.
 
-% Docker and Containerisation
-% Organisation
-% Time Management
-% Project structure
+I believe that the process which I have completed in order to design and implement the SWL database within this project
+has assisted in developing my data management and database creation skills. 
+I will be able to take the techniques and knowledge that I have learnt whilst working with the data in this application
+onto other applications which I work on in the future. 
 
-\chapter{Professional Issues}
+
+\section{Project Skills}
+As well as the above technical skills, this project has been an excellent opportunity to improve on my professional skills.
+Over the course of the project I have been involved with organising various meetings, communicating with professionals within the ASDA business and the University of Liverpool as well as ensuring that the project was completed within the time scales that were outlined.
+
+I have had to ensure that my organisation, time management and project management skills have been as professional as they could be in order to achieve all of the tasks listed above. 
+Whilst there is not a measure or metric which can indicate how successful I have been in making use of these soft skills I am confident that the project has improved my skills and provided me with the confidence to carry forward the various skills onto future projects that I am apart of.
+
+\chapter{Professional Considerations}
+
+In this chapter I have Considered each of the 4 main principles outlined in the BCS code of conduct and I have detailed how they have been considered and met throughout the project. 
+
+\section{Making IT for everyone}
+The project was focused on the production of a software system which can be accessed by multiple colleagues from multiple devices across the asda store estate.
+ With this in mind design and usability was a key focus of the project to ensure that the system was easy to use and simple to understand. 
+ \\
+ \\
+ As can be seen in figure TODO:(insert link to designs) and is discussed in the design chapter of this dissertation the applications have deliberately been kept simple and minimalistic to ensure that the user is not overwhelmed with unnecessary information.
+  I believe that this approach has enabled me to develop a system which specifically calls out to the standard of making IT for everyone by promoting equal access to the application and therefor equal access to the benefits that the application offers. 
+\section{Show what you know, learn what you don't}
+This project has been produced solely by myself and all work on the applications has been written and architected by the author. 
+
+Whilst working through the project there have been various skills / languages that I have not been familiar with which I have had
+to research and learn whilst developing the applications which form part of the system. The skills which I have had to focus on include
+creating writing applications written in Java which is a language I have had very little previous experience with and the creation and architecture of a SQL based Database.
+These points have previously been discussed in more detail in chapter 7 however I feel like they are an excellent example of how 
+I have developed my professional knowledge of two technologies in order to complete the project.
+\\
+\\
+I have also attempted to "Learn what I don't know" through the use of feedback gathered from employees and academics 
+in order to identify potential improvements which could be incorporated into my application. 
+This has involved the use of professional meetings and discussions which are further discussed in Chapter 6.
+
+
+\section{Respect the organisation or individual you work for}
+Due to the fact that this software system has been created for the use of a large national retailer it was essential that the produced system is in tune with the organisations values and principles. 
+As part of ensureing respect for the organisation that I work for I have diligently ensured that any functionality which I was unable to expose for security reasons this has included the authentication of the application as well as the data structures which are used internally has been mocked out.
+
+I have maintained respectful and purposeful communication using regular meetings with the project management and professional resource provided by ASDA to ensure that the project was on track and was meeting the requirements that where outlined initially.
+
+Finally I completely accept all responsibility for the software system that has been produced as part of this project. 
+
+\section{Keep IT real, Keep IT professional. Pass IT on}
+Throughout the development of the software system produced in this project I believe I have represented the BCS principle of 
+"Keep IT real, Keep IT professional. Pass IT on" by ensuring that I have remained professional in all communications between
+myself and others involved in the project. I have ensured that any knowledge that I have learned is well documented in order
+to be easily passed onto other software engineers and In summary I believe that the project has improved my personal professional
+standards and development abilities.
 
 \chapter{Conclusions}
 % How do I feel the application has been completed?
+\section{Personal Conclusion}
 % What would it take to put the application into production
+\section{Productionisation}
 % What extra work could be completed in order to finish the application?
+
+\section{Potential Expansions}
 % Potential for project expansions?
 
+\subsection{Timesheeting}
+Through the use of data mining from the data collected by the application, we should be able to accurately predict
+how long it takes staff to organise and mark down the expiring items within their respective departments. Once 
+this data has been collected then theoretically it could be used in order to calculate how many staff are needed 
+in order to mark down items on a particular day depending on the number of items that need to be reduced as well 
+as the length of time that it is likely to take the staff in order to mark down or redistribute the expiring stock
+on the shop floor. 
+
+\subsection{Stock Prediction and Inventory Management}
+
+By analysing the number of items which are expiring in individual stores we should also be able to perform trend 
+analysis on the data which should highlight items of stock which are repeatedly marked down. This trend analysis 
+could then be used to inform store managers and the ASDA inventory management systems of any over ordering which is 
+occuring and allow for more accurate stock levels to reduce potential waste in the future.
+
+\subsection{Item Location}
+
+\subsection{Item Prioritisation}
 %%%%   REFERENCES
 
 %%%%  Section for references, using the \bibitem directive to 
@@ -441,6 +598,13 @@ In my dissertation I will discuss the feedback which I receive and summarise the
 \newpage
 \addcontentsline{toc}{chapter}{Appendices}
 \begin{appendix}
+    \chapter{User Interface Designs}
+    \section{Mobile Designs}
+    \section{Web Application Designs}
+    \chapter{Database Schema}
+    \chapter{Mobile Application User Interface}
+    \chapter{Web Application User Interface}
+    \chapter{Web Services Documentation}
 \end{appendix}
 
 \end{document}
