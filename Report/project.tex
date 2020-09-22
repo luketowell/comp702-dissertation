@@ -1,5 +1,5 @@
 \documentclass[a4paper,11pt]{report}
-\usepackage[a4paper, total={6in, 9in}]{geometry}
+\usepackage[a4paper, total={6in, 9.5in}]{geometry}
 \usepackage{cite}
 \usepackage{graphicx}
 \usepackage{wrapfig}
@@ -440,8 +440,14 @@ Deployment of Web Services
 
 
 \section{Database}
+go over the schema and how it has been designed
+normalisation
+use of foreign keys to link data in order to ensure reduction of data duplication and insert some benefits of key relationships
 
 \section{Testing of the Applications}
+Manual Testing
+Automated service testing using Swagger and Insomnia.
+Ideally would have liked to write both unit tests and end to end tests.
 
 \chapter{Evaluation}
 \section {Successes of the project}
@@ -623,7 +629,49 @@ occuring and allow for more accurate stock levels to reduce potential waste in t
 \begin{appendix}
     \chapter{User Interface Designs}
     \section{Mobile Designs}
+    \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=9.5cm]{./assets/images/mobileUIpt1.png}}
+        \caption{The mobile application user interface designs, including the Login, Category list and Item list screens from left to right.}
+        \label{fig:mobileUIpt1}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=7cm]{./assets/images/mobileUIpt2.png}}
+        \caption{The mobile application user interface designs, including the Scanner and Item details screens from left to right.}
+        \label{fig:mobileUIpt2}
+    \end{figure}
     \section{Web Application Designs}
+    \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=10cm]{./assets/images/webLogin.png}}
+        \caption{The mobile application user interface designs, including the Scanner and Item details screens from left to right.}
+        \label{fig:mobileUIpt2}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=10cm]{./assets/images/webHome.png}}
+        \caption{The mobile application user interface designs, including the Scanner and Item details screens from left to right.}
+        \label{fig:mobileUIpt2}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=10cm]{./assets/images/webItemDesc.png}}
+        \caption{The mobile application user interface designs, including the Scanner and Item details screens from left to right.}
+        \label{fig:mobileUIpt2}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=10cm]{./assets/images/webWaste.png}}
+        \caption{The mobile application user interface designs, including the Scanner and Item details screens from left to right.}
+        \label{fig:mobileUIpt2}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=10cm]{./assets/images/webMetrics.png}}
+        \caption{The mobile application user interface designs, including the Scanner and Item details screens from left to right.}
+        \label{fig:mobileUIpt2}
+    \end{figure}
     \chapter{Database Schema}
     \chapter{Mobile Application User Scenarios}
     % this should include the scenario of user logs in and uses category to see which items are going out of date today and then can add actions and view details and previously taken actions
