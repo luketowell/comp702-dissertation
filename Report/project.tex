@@ -365,6 +365,29 @@ which I needed to make in order to ensure that the design was suitable for the s
 In the following sections I will discuss the applications which where developed as part of the Xpire system.
 
 \section{Front End Applications}
+both of the front end applications have been written using popular javascript frameworks: React and React 
+Native these are both very similar frameworks with minor differences in functionality. React is used for 
+the web application which is hosted via Azure Application Hosting and can be accessed by any browser that
+the user chooses. React Native has been used for the creation of the Xpire mobile application. React Native
+is a framework which enables a developer to write their applications using javascript code and features of
+the framework and then compile the code into Java and Swift so that the resulting IPA and APK can be ran 
+on IOs or Android devices respectively.
+\\
+\\
+I have chosen both of these frameworks for the following reasons:
+\begin{itemize}
+    \item The frameworks are popular javascript frameworks which I have previously used to write mobile and web applications in.
+    \item Both frameworks utilise the React library meaning that the syntax of the framework is very similar. This is useful 
+    when it comes to reusabilty of components and features. 
+    \item Due to the popularity of each framework there are lots of additional libraries which offer additional functionality
+     e.g. Barcode scanning using the device camera.
+    \item There is a good wealth of documentation and support forum articles available online which enabled me to easily debug 
+    and resolve any issues that I came across whilst developing the front end applications.
+\end{itemize}
+
+As well as being developed using similar frameworks both of the front end applications have been developed using similar coding standards.
+ In this section I will describe what standards have been used in the front end applications and the benefits that they provide to the application code and lifecycle.
+
 12 factor app
 management of different environment variables and configurations
 abstraction
