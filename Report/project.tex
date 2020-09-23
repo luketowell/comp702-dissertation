@@ -8,6 +8,8 @@
 \usepackage{caption}
 \usepackage{float}
 \usepackage{hyperref}
+\usepackage{lscape}
+\usepackage{rotating}
 
 \counterwithout{figure}{chapter}
 
@@ -629,64 +631,147 @@ occuring and allow for more accurate stock levels to reduce potential waste in t
 \begin{appendix}
     \chapter{User Interface Designs}
     \section{Mobile Designs}
-    \begin{figure}[H]
-        \centering
-        \frame{\includegraphics[width=9.5cm]{./assets/images/mobileUIpt1.png}}
-        \caption{The mobile application user interface designs, including the Login, Category list and Item list screens from left to right.}
-        \label{fig:mobileUIpt1}
-    \end{figure}
-    \begin{figure}[H]
-        \centering
-        \frame{\includegraphics[width=7cm]{./assets/images/mobileUIpt2.png}}
-        \caption{The mobile application user interface designs, including the Scanner and Item details screens from left to right.}
-        \label{fig:mobileUIpt2}
-    \end{figure}
+        \begin{figure}[H]
+            \centering
+            \frame{\includegraphics[width=9.5cm]{./assets/images/mobileUIpt1.png}}
+            \caption{The mobile application user interface designs, including the Login, Category list and Item list screens from left to right.}
+            \label{fig:mobileUIpt1}
+        \end{figure}
+        \begin{figure}[H]
+            \centering
+            \frame{\includegraphics[width=7cm]{./assets/images/mobileUIpt2.png}}
+            \caption{The mobile application user interface designs, including the Scanner and Item details screens from left to right.}
+            \label{fig:mobileUIpt2}
+        \end{figure}
+
     \section{Web Application Designs}
-    \begin{figure}[H]
-        \centering
-        \frame{\includegraphics[width=10cm]{./assets/images/webLogin.png}}
-        \caption{The mobile application user interface designs, including the Scanner and Item details screens from left to right.}
-        \label{fig:mobileUIpt2}
-    \end{figure}
-    \begin{figure}[H]
-        \centering
-        \frame{\includegraphics[width=10cm]{./assets/images/webHome.png}}
-        \caption{The mobile application user interface designs, including the Scanner and Item details screens from left to right.}
-        \label{fig:mobileUIpt2}
-    \end{figure}
-    \begin{figure}[H]
-        \centering
-        \frame{\includegraphics[width=10cm]{./assets/images/webItemDesc.png}}
-        \caption{The mobile application user interface designs, including the Scanner and Item details screens from left to right.}
-        \label{fig:mobileUIpt2}
-    \end{figure}
-    \begin{figure}[H]
-        \centering
-        \frame{\includegraphics[width=10cm]{./assets/images/webWaste.png}}
-        \caption{The mobile application user interface designs, including the Scanner and Item details screens from left to right.}
-        \label{fig:mobileUIpt2}
-    \end{figure}
-    \begin{figure}[H]
-        \centering
-        \frame{\includegraphics[width=10cm]{./assets/images/webMetrics.png}}
-        \caption{The mobile application user interface designs, including the Scanner and Item details screens from left to right.}
-        \label{fig:mobileUIpt2}
-    \end{figure}
+        \begin{figure}[H]
+            \centering
+            \frame{\includegraphics[width=10cm]{./assets/images/webLogin.png}}
+            \caption{The design for the web application login screen}
+            \label{fig:mobileUIpt2}
+        \end{figure}
+        \begin{figure}[H]
+            \centering
+            \frame{\includegraphics[width=10cm]{./assets/images/webHome.png}}
+            \caption{The design for the web application home screen once a user has been authenticated}
+            \label{fig:mobileUIpt2}
+        \end{figure}
+        \begin{figure}[H]
+            \centering
+            \frame{\includegraphics[width=10cm]{./assets/images/webItemDesc.png}}
+            \caption{The design for the web application item description screen. This screen is used to display item information specific for the users store.}
+            \label{fig:mobileUIpt2}
+        \end{figure}
+        \begin{figure}[H]
+            \centering
+            \frame{\includegraphics[width=10cm]{./assets/images/webWaste.png}}
+            \caption{The design for the web application waste screen. This is a conceptual design for the a waste page which would allow the store manager to view an item based waste summary for their store.}
+            \label{fig:mobileUIpt2}
+        \end{figure}
+        \begin{figure}[H]
+            \centering
+            \frame{\includegraphics[width=10cm]{./assets/images/webMetrics.png}}
+            \caption{The design for the web application metrics screen. This is a conceptual design for the a metrics page which would allow the store managers to view an store based metrics for their store and the items that are often wasted.}
+            \label{fig:mobileUIpt2}
+        \end{figure}
+
     \chapter{Database Schema}
+
+        \begin{figure}[H]
+            \centering
+            \frame{\includegraphics[width=15cm]{./assets/images/Database-Schema.png}}
+            \caption{The database schema for the final state of the Xpire database, this schema details all of the tables, columns and relationships.}
+            \label{fig:mobileUIpt2}
+        \end{figure}
+     
     \chapter{Mobile Application User Scenarios}
+    
+    \begin{sidewaysfigure}[ht]
+        \frame{\includegraphics[width=25cm]{./assets/images/Scenario_1.png}}
+        \caption{The mobile application and the potential flow a user may take when manually checking category items via the application.}
+        \label{fig:mobileUIpt2}
+    \end{sidewaysfigure}
+
+    \begin{sidewaysfigure}[ht]
+        \frame{\includegraphics[width=25cm]{./assets/images/Scenario_2.png}}
+        \caption{The mobile application usage flow when a user uses the application scanner functionality in order to look up item information using the items barcode.}
+        \label{fig:mobileUIpt2}
+    \end{sidewaysfigure}
     % this should include the scenario of user logs in and uses category to see which items are going out of date today and then can add actions and view details and previously taken actions
     % Scenario 2 - user scans item to find all expiring items with same barcode. can see items taken on items expiring on different dates.
     % scenario 3 - Expiring item is found in store but not known in app
 
+    \begin{sidewaysfigure}[ht]
+        \frame{\includegraphics[width=25cm]{./assets/images/Scenario_3.png}}
+        \caption{The mobile application usage flow when a user uses the application scanner functionality in order to enter the details for an item in the store which is unknown to the application.}
+        \label{fig:mobileUIpt2}
+    \end{sidewaysfigure}
+
 
     \chapter{Web Application User Interface}
-    show functionality of being able to view items and categories 
-    use date picker to choose either future or previous dates in order to view what items did go out of date and how they were wasted or to view items that are going out of date to see how items can be handled
-    also view item details and add actions
+    \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=9cm]{./assets/images/webLogin.png}}
+        \caption{The web application login screen.}
+        \label{fig:swaggerList}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=9cm]{./assets/images/webHomeUi.png}}
+        \caption{The web application home screen. This page enables the manager to change store, view category and item information for specific dates.}
+        \label{fig:endpointDocs}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=10cm]{./assets/images/webDairyCat.png}}
+        \caption{An example of an item being displayed in the home page for the Dairy category.}
+        \label{fig:endpointExample}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=10cm]{./assets/images/webFruitItem.png}}
+        \caption{An example of an item being displayed in the home page for the Fruit and Veg category.}
+        \label{fig:endpointTest}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=10cm]{./assets/images/webItemDetail.png}}
+        \caption{The web application item detail screen. This screen displays all item information to the user. The user is also able to update the item with a new action which they have taken.}
+        \label{fig:endpointTestResponse}
+    \end{figure}
+    
     \chapter{Web Services Documentation}
-    swagger documentation
-    allows you to see all endpoints that are available to developer
-    allows the use of endpoints in the dev environment
+    \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=10cm]{./assets/images/swaggerList.png}}
+        \caption{The swagger documentation headings for all available controllers in the web service application.}
+        \label{fig:swaggerList}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=10cm]{./assets/images/endpointDocs.png}}
+        \caption{An example of the documentation of each of the endpoints within each controller.}
+        \label{fig:endpointDocs}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=10cm]{./assets/images/endpointExample.png}}
+        \caption{A screenshot of the storeItemSummary controller endpoint, this includes the documentation for each potential response that the endpoint can return as well as the parameters which the endpoint expects to receive.}
+        \label{fig:endpointExample}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=10cm]{./assets/images/endpointTest.png}}
+        \caption{A screenshot of how the endpoint can be tested within the swagger user interface.}
+        \label{fig:endpointTest}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=10cm]{./assets/images/endpointTestResponse.png}}
+        \caption{The response which is returned when a user successfully calls the endpoint via the Swagger UI.}
+        \label{fig:endpointTestResponse}
+    \end{figure}
 \end{appendix}
 
 \end{document}
