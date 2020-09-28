@@ -503,12 +503,21 @@ for the storeItemSummary list, this is an example of how requests to the web ser
 needs to display for the user.
 
 \begin{figure}[H]
-\centering
-\frame{\includegraphics[width=10cm]{./assets/images/actionExample.png}}
-\caption{The http request code as an example of abstraction.}
-\label{fig:actionExample}
-\end{figure}
+    \centering
+    \frame{\includegraphics[width=10cm]{./assets/images/actionExample.png}}
+    \caption{The http request code as an example of abstraction.}
+    \label{fig:actionExample}
+    \end{figure}
 
+A further development principle which I have made use of in the development of my application is componentisation. Componentisation is very similar to abstraction where the functionality of a section of the application is abstracted into a component. This component can then be referenced throughout the code base in multiple locations. Once referenced then the component will be rendered in the UI of the application where ever the developer intends. Componentisation shares many benefits with abstraction where the component can be reused or shared amongst applications, can be used multiple times throughout an application without duplication of code and finally reduces the over all amount of code which the developers need to manage which makes the development and troubleshooting of applications easier and more maintainable. 
+Figure ~\ref{fig:textComponent} is a simple example of how I have abstracted out multiple forms of text into a text component. this component allows me to standardise how text is rendered and displayed to the user but also means that I do not have to duplicate the code for stylings and alignment across all instances throughout the code base because the component is completely reusable throughout my application.
+
+\begin{figure}[H]
+    \centering
+    \frame{\includegraphics[width=10cm]{./assets/images/textComponent.png}}
+    \caption{The http request code as an example of abstraction.}
+    \label{fig:textComponent}
+    \end{figure}
 
 \subsection{Web Application}
 The web application of the system has been written in the React JavaScript framework. The functionality of the application is largely the same as the mobile application however because the web view is available on a larger screen size I have used this to my advantage and included slightly more information for the user. 
