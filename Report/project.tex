@@ -289,11 +289,13 @@ of the project. Each of these requirements where broken down into development ca
 the project Trello board. Each card contains the aim of the card, the requirement that the development
 will provide and the functionality which will be available once the card has been completed. 
 
-%    TODO: insert a figure of a well documented card
+% TODO: insert a figure of a well documented card
 
 % TODO: Insert notes from discussion with Philippa to document the gathering of requirements from members of the ASDA project management staff. 
 
 % TODO: Insert potential notes from confluence. 
+
+Through the use of the Trello board I have been able to clearly document the requirements of the applications which has allowed me to easily communicate what I am working on with the stakeholders of the system. This has assisted in meetings with ASDA colleagues when I have had to explain the development process and indicate how progress was being made.
 
 \chapter{Ethical Use Of Data}
 \section{Data used in the system}
@@ -338,6 +340,9 @@ interface design in Balsamiq and the final user interface that was produced.
 
 \subsection{Mobile Application User Interface Design}
 
+When developing for the mobile application a key focus was the fact that I was working with a smaller screen. This meant that I needed to limit the information which is displayed on the screen whilst still providing the user with all of the information that they require. In order to do this the user flow through the application needed to be considered as well as the data which would be required by the user. ]
+As you can see in Figure ~\ref{fig:UIDesignExample} the mobile application screens have been deliberately kept simple with very few options for the user to choose from. On the category screen the user is able to only view the categories that are available too them. Once the user has chosen their category then they are directed to the item list screen which filters all items which are going to expire by the category that they have chosen to ensure that the user only views the items that are applicable to their current search.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=11cm]{./assets/images/uiDesign-example.png}
@@ -345,11 +350,30 @@ interface design in Balsamiq and the final user interface that was produced.
     \label{fig:UIDesignExample}
 \end{figure}
 
+When considering the UI design of the application I wanted to also ensure that the application was visually appealing to the user and as mentioned above not overwelming. In order to achieve my aim I have had to do some research into how to design applications for mobile screens. Through my research I read various articles which stated that I should adhere to the following principles:
+
+\begin{itemize}
+    \item Navigation throughout the application should be simple.
+    \item Content should be broken down into easily managable chunks of information.
+    \item Input from the user should be limited to only the essential information needed from the application.
+\end{itemize}
+
+Figure ~\ref{fig:UIDesignExample} and Appendix ~\ref{appendix:mobileDesign} demonstrate that I have thought about and considered the above points when I have designed the mobile application interface. The user interface designs for the mobile application where then carried over in order to influence the design of the web application which are discussed in the following section.
 
 \subsection{Web Application User Interface Design}
 
+The web application is another touch point for ASDA colleagues. The main difference between the mobile application and the web application is that the web application is more likely to be used by store management and home offic staff. Due to the differing user cases there are some functionality differences between the mobile application and the web application. The main functional differences are:
+\begin{itemize}
+    \item User of the web application will be able to view item and expiry information for different days when using the web application.
+    \item Users who are identified as management will be presented with different features which will include a metrics screen and a waste screen.
+    \item Managers will also be able to change the store that they are viewing information for. 
+\end{itemize}
+
+Appendix ~\ref{appendix:webDesign} shows the designs that I created when thinking about the functionality of the application and the previous designs of the mobile application. 
+It was very important that the web application has a similar design to the mobile application so that the user is able to associate each app with the other. This is in order to provide the user with a consistent experience and appearance. As can be seen with the Login, Home and Item Details screen in appendix ~\ref{appendix:webDesign} the designs and content of each of the pages are the same as those from the mobile application designs in ~\ref{appendix:mobileDesign}.
+
 \section{Database Design}
-One of the features of the system which probably took the most amount of time and research was the database.
+One of the features of the system creation which took the most amount of time and research was the database.
 The database schema below (See Figure ~\ref{fig:DBSchema}) shows the final design of the database including foreign key relationships, primary keys and tables.
 
 \begin{figure}[H]
@@ -359,15 +383,22 @@ The database schema below (See Figure ~\ref{fig:DBSchema}) shows the final desig
     \label{fig:DBSchema}
 \end{figure}
 
-In my dissertation I will go into more information about the challenges which arose whilst I was implementing the database  and the considerations
-which I needed to make in order to ensure that the design was suitable for the software system.
-
+As you can see all of the tables are interrelated in some way with references to other tables. The main table of the database is the store{\_}item table which stores all of the relevant information needed for the store users to be able to see which items are going to expire and contains a foreign key relationship in the form of a one to one relationship with store items and item information in the item table.
+\\
+\\
+The main actions that a user takes are then stored in the store{\_}item{\_}action table which has a many to one foreign key relationship with the store{\_}item table. this allows me to create the relationship between the store items and their relevant actions that have been recorded by users whilst also ensuring that the store items are easy to store and maintain within the DB.
+\\
+\\
+There are three tables which have been created as they are potential options available to the user within the application. These are the item{\_}category, status and store tables which are mainly used for the creation of dropdown boxes when the user is choosing various options thoughout the application. The reason for storing the options in seperate tables within the database over hardcoding them in the application is that by abstracting the options into the database I am easily able to edit and update options without having to modify the application code which then means that I do not have to redeploy any applications or interupt any potential user flow which makes the app more user friendly for the potential users.
+\\
+\\
+The final table is the item table. The item table contains all of the time information required for the software system. The table is populated from the large data warehouse which is used to maintain item information across the whole of the ASDA estate. Due to the security issues which I discuss in Chapter 9 I was unable to make use of tdata warehouse feed so I have had to create mock data within the item table.
 
 \chapter{Realisation}
 In the following sections I will discuss the applications which where developed as part of the Xpire system.
 
 \section{Front End Applications}
-both of the front end applications have been written using popular javascript frameworks: React and React 
+Both of the front end applications have been written using popular javascript frameworks: React and React 
 Native these are both very similar frameworks with minor differences in functionality. React is used for 
 the web application which is hosted via Azure Application Hosting and can be accessed by any browser that
 the user chooses. React Native has been used for the creation of the Xpire mobile application. React Native
@@ -390,10 +421,9 @@ I have chosen both of these frameworks for the following reasons:
 As well as being developed using similar frameworks both of the front end applications have been developed using similar coding standards.
  In this section I will describe what standards have been used in the front end applications and the benefits that they provide to the application code and lifecycle.
 
-12 factor app
-management of different environment variables and configurations
-abstraction
-componentisation
+12 factor app - the 12 factor app, made use of environment variables in order to store application config, seperated the backing services, Processes, made use of codebase tracked in version control.
+abstraction - use the example of the axios request
+componentisation - components e.g. item card or Text component
 
 \subsection{Mobile Application}
 The mobile application of Xpire is the main part of the system which is used by the front of house store colleagues who are working on the shop floor.
@@ -407,14 +437,16 @@ The application also includes a barcode scanner which enables users to easily sc
 Figure ~\ref{fig:IOSScreenshots} shows an example of the IOs version of the apps user interface. These screenshots can be directly compared against Figure ~\ref{fig:UIDesignExample}
  to show how the designs of the application have been implemented in the final versions of the application.
 
-User Scenarios
-
 \begin{figure}[H]
     \centering
     \includegraphics[width=10cm]{./assets/images/appUI.png}
     \caption{Screenshots of the IOs mobile application.}
     \label{fig:IOSScreenshots}
 \end{figure}
+
+In Appendix ~\ref{appendix:mobileUI} I have outlined three of the potential user scenarios for the application.
+
+Here I will outline each of the user scenarios
 
 \subsection{Web Application}
 The web application of the system has been written in the React JavaScript framework. The functionality of the application is largely the same as the mobile application however because the web view is available on a larger screen size I have used this to my advantage and included slightly more information for the user. 
@@ -428,23 +460,27 @@ Figure ~\ref{fig:WebUi} is a screen shot of the application which includes the f
     \label{fig:WebUi}
 \end{figure}
 
+Appendix ~\ref{appendix:webUI} details the screen shots of a users journey through the web application and demonstrates the information that is available to the user.
+As was mentioned previously the web application contains some extra functionality which the mobile application does not currently offer.
+
+This functionality includes the ability to query for items which are expiring on specific dates which is chosen by the user on the homepage. This feature allows users to view items which are going to expire in the future or view items which have previously expired and view what actions where taken against them by store colleagues.
+other functionality also includes the ability to change stores and view items which are expiring in other stores. 
+
 \section{Web Services}
 In order to manage the communication between the front end applications and the database I have written web services in Java using the Spring Boot framework. 
-The application has been designed using the "repository pattern" which is discussed in the Gang of Four Book, Design Patterns: Elements of Reusable Object-Oriented Software\cite{gamma1994design} which creates an interface between the front end user and the database.
+The application has been designed using the "repository pattern" which is discussed in the Gang of Four Book, Design Patterns: Elements of Reusable Object-Oriented Software\cite{gamma1994design} which creates an interface between the front end user and the database. This enables the system to ensure that the data being provided from the front end application matches the expect input and data types that is expected by the database tables. The level of abstraction also allows the developer to manipulate and control the data after is has been retrieved from the database but prior to it being returned to the front end application.
 
-Documentation of the web services.
-Swagger
+\subsubsection{Documentation of the Web Services}
+All of the web services that are available have been documented using the swagger plugin which has enabled me to easily document all of the endpoints that I make use of in the web services. this documentation allows other future developers to easily make use of the web services in their own front end application by providing them with the endpoint URI, the expected parameters and the responses which are provided under certain situations. Appendix ~\ref{appendix:webservices} details how the Swagger UI documentation is displayed and how a developer can make use of the documentation in order to view details about the services and test the relevant services.
 
-Management of Variables
-
-Deployment of Web Services
-
+\subsubsection{Handling of Environment Variables}
+As discussed in the front end applications I have also made use of environment variables in order to manage application configuration values between the different environments. This ensures that the configuration is not hardcoded and can easily be updated or replaced on compile of the web services code. It enables me to easily connect the application to different data sources so that data can be kept separate in other environments for example data in the dev environment does not accidentally make it into the production environment. 
 
 
-\section{Database}
-go over the schema and how it has been designed
-normalisation
-use of foreign keys to link data in order to ensure reduction of data duplication and insert some benefits of key relationships
+\subsubsection{Deployment of Web Services}
+Because the web servers are written in Java you would tradtionally run the web application on a web host e.g. Microsoft Azure or Amazon Web Services (AWS) which would host the web services on an Apache TomCat server. Since this application will be ran in the ASDA environments I have set up the application using docker which allows me to create an docker image which can be ran on a Kubernetes cluster within the ASDA cloud environment. 
+By using Docker I am able to run the application in isolation on the Kubernetes cluster and I am also conveniently able to make use of in built monitoring and alerting if there is any issues with the application whilst it is running. 
+
 
 \section{Testing of the Applications}
 Manual Testing
@@ -631,6 +667,7 @@ occuring and allow for more accurate stock levels to reduce potential waste in t
 \begin{appendix}
     \chapter{User Interface Designs}
     \section{Mobile Designs}
+    \label{appendix:mobileDesign}
         \begin{figure}[H]
             \centering
             \frame{\includegraphics[width=9.5cm]{./assets/images/mobileUIpt1.png}}
@@ -645,6 +682,7 @@ occuring and allow for more accurate stock levels to reduce potential waste in t
         \end{figure}
 
     \section{Web Application Designs}
+    \label{appendix:webDesign}
         \begin{figure}[H]
             \centering
             \frame{\includegraphics[width=10cm]{./assets/images/webLogin.png}}
@@ -677,7 +715,7 @@ occuring and allow for more accurate stock levels to reduce potential waste in t
         \end{figure}
 
     \chapter{Database Schema}
-
+    \label{appendix:DBSchema}
         \begin{figure}[H]
             \centering
             \frame{\includegraphics[width=15cm]{./assets/images/Database-Schema.png}}
@@ -686,6 +724,7 @@ occuring and allow for more accurate stock levels to reduce potential waste in t
         \end{figure}
      
     \chapter{Mobile Application User Scenarios}
+    \label{appendix:mobileUI}
     
     \begin{sidewaysfigure}[ht]
         \frame{\includegraphics[width=25cm]{./assets/images/Scenario_1.png}}
@@ -710,6 +749,7 @@ occuring and allow for more accurate stock levels to reduce potential waste in t
 
 
     \chapter{Web Application User Interface}
+    \label{appendix:webUI}
     \begin{figure}[H]
         \centering
         \frame{\includegraphics[width=9cm]{./assets/images/webLogin.png}}
@@ -742,6 +782,7 @@ occuring and allow for more accurate stock levels to reduce potential waste in t
     \end{figure}
     
     \chapter{Web Services Documentation}
+    \label{appendix:webservices}
     \begin{figure}[H]
         \centering
         \frame{\includegraphics[width=10cm]{./assets/images/swaggerList.png}}
