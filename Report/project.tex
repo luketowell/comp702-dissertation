@@ -421,7 +421,9 @@ I have chosen both of these frameworks for the following reasons:
 As well as being developed using similar frameworks both of the front end applications have been developed using similar coding standards.
  In this section I will describe what standards have been used in the front end applications and the benefits that they provide to the application code and lifecycle.
 
-12 factor app - the 12 factor app, made use of environment variables in order to store application config, seperated the backing services, Processes, made use of codebase tracked in version control.
+When writing both of the applications I have made use of the 12 factor app approach. The 12 factor app is a software development approach which outlines 12 practices which developers should follow in order to produce high quality applications which are easily picked up by other developers and easily expanded upon. 
+Whilst developing all of my applications I have made use of environment variables in order to store application config, I have seperated the backing services into seperate web services so that they are easily manipulated without having to update the application code and I have made use of codebases which are tracked in version control in order to ensure that I am alwasy able to recall a working version of the code if I accidentally break functionality whilst developing the applications.
+In the following sections I am going to go over how I have made use of the 12 factor app principles and other development principles I have made use of in order to produce high quality enterprise applications.
 abstraction - use the example of the axios request
 componentisation - components e.g. item card or Text component
 
@@ -447,6 +449,66 @@ Figure ~\ref{fig:IOSScreenshots} shows an example of the IOs version of the apps
 In Appendix ~\ref{appendix:mobileUI} I have outlined three of the potential user scenarios for the application.
 
 Here I will outline each of the user scenarios
+
+Scenario 1
+
+
+Scenario 2
+
+
+Scenario 3
+
+Development practices
+As part of developing the application I have ensured that the applications are built in a way that means that the applications can be deployed within an enterprise environment. In order to do this I have made use of the 12 factor app approach which has been mentioned previously. One of the factors in the 12 factor app is the use of environmental variables in order to ensure that the applications configuration can easily be managed between different environments e.g. Dev, Stage, Production and IOs and Android. 
+Figure ~\ref{fig:iosVars} shows the contents of the IOs environment variables in this file you can see the hostname of the server where the IOs application should make its requests to and the environment that the application is built for.
+
+\begin{figure}[H]
+    \centering
+    \frame{\includegraphics[width=10cm]{./assets/images/iosVars.png}}
+    \caption{Content of the IOs environment variable file}
+    \label{fig:iosVars}
+\end{figure}
+
+The env file is then picked up at compile time and the values are inserted into the parts of the code where the configuration is referenced. Figure ~\ref{fig:iosScript} is an example of one of the compile script which takes in the environment variable files for that particular application build.
+\begin{figure}[H]
+    \centering
+    \frame{\includegraphics[width=10cm]{./assets/images/iosScript.png}}
+    \caption{IOs application build file which includes the IOs environment variables.}
+    \label{fig:iosScript}
+\end{figure}
+
+As well as environment variables to store configuration I have also made use of the development principle of abstraction.
+Abstraction is where functionality is abstracted out from the code into a seperate module so that it can be called from
+the code that requires it. Abstraction is beneficial to the code base because it means that the functionality can be reused
+throughout the application without the duplication of code which would be needed if the functionality was not abstracted.
+Abstraction also means that the code becomes more readable and easier to understand for other developers. 
+This is because the code that the developer is reading only relates to that one function instead of potentially 
+relating to multiple pieces of functionality.
+\\
+\\
+ Figure ~\ref{fig:request} is an example of the abstraction used within both
+the mobile and web applications that I have produced. I have abstracted the http request functionality into its own file 
+which is then exported so that it can be imported into any other file and called from multiple locations within the application.
+
+\begin{figure}[H]
+\centering
+\frame{\includegraphics[width=10cm]{./assets/images/request.png}}
+\caption{The http request code as an example of abstraction.}
+\label{fig:request}
+\end{figure}
+
+In the request example the request function is called from any of the redux actions which want to make an http request to the
+backend server. Figure  shows the action making use of the imported request functionality to make a request 
+for the storeItemSummary list, this is an example of how requests to the web services are made in order to retrieve the data which the application
+needs to display for the user.
+
+\begin{figure}[H]
+\centering
+\frame{\includegraphics[width=10cm]{./assets/images/actionExample.png}}
+\caption{The http request code as an example of abstraction.}
+\label{fig:actionExample}
+\end{figure}
+
 
 \subsection{Web Application}
 The web application of the system has been written in the React JavaScript framework. The functionality of the application is largely the same as the mobile application however because the web view is available on a larger screen size I have used this to my advantage and included slightly more information for the user. 
