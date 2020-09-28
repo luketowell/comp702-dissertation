@@ -450,15 +450,60 @@ In Appendix ~\ref{appendix:mobileUI} I have outlined three of the potential user
 
 Here I will outline each of the user scenarios
 
-Scenario 1
 
+\begin{figure}[H]
+    \centering
+    \frame{\includegraphics[width=12.5cm]{./assets/images/Scenario_1.png}}
+    \caption{The mobile application and the potential flow a user may take when manually checking category items via the application.}
+    \label{appendix:scenario1small}
+\end{figure}
+\subsubsection{Scenario 1}
+Figure~\ref{appendix:scenario1small} and Appendix ~\ref{appendix:mobileUI}.1 details the main scenario of the application where a user would like to view the items that are expiring today in a specific department. The process flow is:
+\begin{itemize}
+    \item The user authenticates themselves and is provided access to the main page of the application
+    \item The user selects one of the three categories: Fresh Fruit and Veg, Dairy or Chilled.
+    \item Once the user has selected their category they are redirected to a list of all items expiring on the current day for that category.
+    \item The user selects the item that they would like to view and is directed to the item details.
+    \item From the item details the user can view: item information or previous actions that other store colleagues have taken for this item.
+    \item The user is able to add a new action and update the store item database with the next expiry date of the item.
+    \item Once the user has added their action details to the DB then they are forwarded to the details of the new item expiry that they have added. This is performed as a confirmation step to reassure the user that they have successfully updated the store item.
+\end{itemize}
 
-Scenario 2
+\begin{figure}[H]
+    \centering
+    \frame{\includegraphics[width=12.5cm]{./assets/images/Scenario_2.png}}
+    \caption{The mobile application usage flow when a user uses the application scanner functionality in order to look up item information using the items barcode.}
+    \label{appendix:scenario2small}
+\end{figure}
+\subsubsection{Scenario 2}
+Figure~\ref{appendix:scenario2small} and Appendix ~\ref{appendix:mobileUI}.2 shows another potential way that a user can view the details of an expiring item on the shop floor. By using the barcode scanning functionality of the device camera the user is able to retrieve all potential expiring items that match the barcode which is scanned so they can view the details of the store items which are contained in the Xpire database. The process flow is:
+\begin{itemize}
+    \item The user authenticates themselves and is provided access to the main page of the application as in scenario 1. 
+    \item Because the user has the item in front of them they are able to select the "Scan" option from the home screen.
+    \item The user is redirected to the scanning view which opens up the camera of the device and makes use of the barcode scanning functionality of the application.
+    \item The user scans the barcode of the item. At this point the application makes a request to the web services which return all of the store items that match the provided barcode. 
+    \item The user chooses the store item that they would like to view. Whilst each store item may have the same barcode they will each have different expiry dates which match the products on the shelves. 
+    \item The user is redirected to the store item details where they are able to perform the same functionality as in scenario 1 e.g. view item details, view previous actions and add actions of their own.
+\end{itemize}
 
-
-Scenario 3
-
-Development practices
+\begin{figure}[H]
+    \centering
+    \frame{\includegraphics[width=12.5cm]{./assets/images/Scenario_3.png}}
+    \caption{The mobile application usage flow when a user uses the application scanner functionality in order to enter the details for an item in the store which is unknown to the application.}
+    \label{appendix:scenario3small}
+\end{figure}
+\subsubsection{Scenario 3}
+Figure~\ref{appendix:scenario3small} and Appendix ~\ref{appendix:mobileUI}.3 details the a common in store scenario where a store colleague has found an item in one of the three categories which is not currently listed by the application because the expiring item is not contained in the Xpire database.  In this scenario the user needs to update the Xpire system so that it knows that the item is expiring and the user can then enter the action that they have taken. The process flow is:
+\begin{itemize}
+    \item The user authenticates themselves and is provided access to the main page of the application as in scenario 1. 
+    \item Because the user has the item in front of them they are able to select the scan option.
+    \item The user is redirected to the scanning view which opens up the camera of the device and makes use of the barcode scanning functionality of the application.
+    \item The user scans the barcode of the item and is informed that the item is not known about in the Xpire database.
+    \item The user enters the expiry date of the item that they have, the item is then added to the store item table in the database.
+    \item The user is redirected to the new item details and the confirmation that the item has been updated in Xpire is displayed for the user.
+\end{itemize}
+\subsubsection{Development practices}
+\subsubsection{Configuration / Environment Variables}
 As part of developing the application I have ensured that the applications are built in a way that means that the applications can be deployed within an enterprise environment. In order to do this I have made use of the 12 factor app approach which has been mentioned previously. One of the factors in the 12 factor app is the use of environmental variables in order to ensure that the applications configuration can easily be managed between different environments e.g. Dev, Stage, Production and IOs and Android. 
 Figure ~\ref{fig:iosVars} shows the contents of the IOs environment variables in this file you can see the hostname of the server where the IOs application should make its requests to and the environment that the application is built for.
 
@@ -477,6 +522,7 @@ The env file is then picked up at compile time and the values are inserted into 
     \label{fig:iosScript}
 \end{figure}
 
+\subsubsection{Abstraction}
 As well as environment variables to store configuration I have also made use of the development principle of abstraction.
 Abstraction is where functionality is abstracted out from the code into a seperate module so that it can be called from
 the code that requires it. Abstraction is beneficial to the code base because it means that the functionality can be reused
@@ -509,6 +555,7 @@ needs to display for the user.
     \label{fig:actionExample}
     \end{figure}
 
+\subsubsection{Componentisation}
 A further development principle which I have made use of in the development of my application is componentisation. Componentisation is very similar to abstraction where the functionality of a section of the application is abstracted into a component. This component can then be referenced throughout the code base in multiple locations. Once referenced then the component will be rendered in the UI of the application where ever the developer intends. Componentisation shares many benefits with abstraction where the component can be reused or shared amongst applications, can be used multiple times throughout an application without duplication of code and finally reduces the over all amount of code which the developers need to manage which makes the development and troubleshooting of applications easier and more maintainable. 
 Figure ~\ref{fig:textComponent} is a simple example of how I have abstracted out multiple forms of text into a text component. this component allows me to standardise how text is rendered and displayed to the user but also means that I do not have to duplicate the code for stylings and alignment across all instances throughout the code base because the component is completely reusable throughout my application.
 
@@ -800,13 +847,13 @@ occuring and allow for more accurate stock levels to reduce potential waste in t
     \begin{sidewaysfigure}[ht]
         \frame{\includegraphics[width=25cm]{./assets/images/Scenario_1.png}}
         \caption{The mobile application and the potential flow a user may take when manually checking category items via the application.}
-        \label{fig:mobileUIpt2}
+        \label{appendix:scenario1}
     \end{sidewaysfigure}
 
     \begin{sidewaysfigure}[ht]
         \frame{\includegraphics[width=25cm]{./assets/images/Scenario_2.png}}
         \caption{The mobile application usage flow when a user uses the application scanner functionality in order to look up item information using the items barcode.}
-        \label{fig:mobileUIpt2}
+        \label{appendix:scenario2}
     \end{sidewaysfigure}
     % this should include the scenario of user logs in and uses category to see which items are going out of date today and then can add actions and view details and previously taken actions
     % Scenario 2 - user scans item to find all expiring items with same barcode. can see items taken on items expiring on different dates.
@@ -815,7 +862,7 @@ occuring and allow for more accurate stock levels to reduce potential waste in t
     \begin{sidewaysfigure}[ht]
         \frame{\includegraphics[width=25cm]{./assets/images/Scenario_3.png}}
         \caption{The mobile application usage flow when a user uses the application scanner functionality in order to enter the details for an item in the store which is unknown to the application.}
-        \label{fig:mobileUIpt2}
+        \label{appendix:scenario3}
     \end{sidewaysfigure}
 
 
