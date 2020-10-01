@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{asda-food-waste}
 ASDA.
@@ -12,6 +12,18 @@ Atlassian.
 Balsamiq.
 \newblock Balsamiq user interactive design software, 2020.
 
+\bibitem{mobile-first}
+Studio by~UX~Pin.
+\newblock A hands-on guide to mobilefirst responsive design, 2020.
+
+\bibitem{twelve-factor}
+Twelve factor App.
+\newblock The twelve-factor app, 2020.
+
+\bibitem{design-mobile}
+Interaction~Design Foundation.
+\newblock Designing for the mobile environment - some simple guidelines, 2020.
+
 \bibitem{gamma1994design}
 E.~Gamma, R.~Helm, R.~Johnson, and J.~Vlissides.
 \newblock {\em Design Patterns: Elements of Reusable Object-Oriented Software}.
@@ -22,9 +34,33 @@ E.~Gamma, R.~Helm, R.~Johnson, and J.~Vlissides.
 Too Good~To Go.
 \newblock Too good to go - about us, 2020.
 
+\bibitem{insomnia}
+Insomnia.
+\newblock Insomnia rest client, 2020.
+
+\bibitem{comprehensive-design}
+Smashing Magazine.
+\newblock A comprehensive guide to mobile app design, 2020.
+
+\bibitem{spring}
+Spring.
+\newblock Spring boot framework, 2020.
+
+\bibitem{swagger}
+Swagger.
+\newblock Swagger ui, 2020.
+
+\bibitem{abstraction}
+Tech Terms.
+\newblock Abstraction definition, 2020.
+
 \bibitem{totalctrl}
 TotalCtrl.
 \newblock Totalctrl food waste solutions, 2020.
+
+\bibitem{component}
+Wikipedia.
+\newblock Component-based software development, 2020.
 
 \bibitem{wrap-food-drink}
 WRAP.

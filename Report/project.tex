@@ -76,13 +76,16 @@ into an ASDA store in the future. The requirements and periodic demoing of the p
 be provided to ASDA technology colleagues throughout the period of the project.
 \\
 \\
-At the end of this project a software system has been produced which makes use of Java web services and React front end technologies. This report details the design process of the system which has been produced whilst also discussing the development approaches that where taken during the technical implementation.
-The overall learning outcomes are discussed which highlights which new technologies have been used throughout the project. At the end of this dissertation the project is concluded and potential further expansions of the system are listed and detailed. 
+At the end of this project a software system has been produced which makes use of Java web services and React front end technologies. This report details the design process of the system which has been produced whilst also discussing the development principles that have been applied and the professional skills which have been utilised during the technical implementation of the Xpire software system.
+The overall learning outcomes are discussed which highlights which new technologies have been used throughout the project. There is also a consideration of how the project has applied the four main principles of the British Computer Society. 
+\\
+\\
+At the end of this dissertation the project is evaluated and concluded with my personal thoughts on how the project has gone and wether the initial aims outlined in the introduction of the dissertation have been met. Potential further expansions of the system are also listed and detailed within the conclusion. 
 \newpage
 
 \chapter*{Code Repositories}
 As this project has been completed multiple code repositories have been created for each of the applications.
-Each code repository contains a README.md file which provides guidance on how to run each of the applications locally on a machine. Due to the fact that all of the application have been written on a Macbook Air they have not been tested on any other Operating Systems so there may be further set up required if not running on MacOS.
+Each code repository contains a README.md file which provides guidance on how to run each of the applications locally on a machine. Due to the fact that all of the application have been written on a Macbook Air they have not been tested on any other operating systems so there may be further set up required if not running on MacOS.
 
 \section*{Front End Applications}
 \subsection*{Mobile application}
@@ -293,8 +296,9 @@ application I also gathered requirements from ASDA employees who are familiar wi
 of the project. Each of these requirements where broken down into development cards and documented on
 the project Trello board. Each card contains the aim of the card, the requirement that the development
 will provide and the functionality which will be available once the card has been completed. 
-
-At the beginning of the project I was provided with a short document which detailed the overall requirements of the project. These requirements are what became the project aims which have previously been listed in Chapter 1~\ref{sec:problem}. Figure ~\ref{fig:project_requirements} shows the initial list of requirements that I was provided. 
+\\
+\\
+At the beginning of the project I was provided with a short document which detailed the overall requirements of the project. These requirements are what became the project aims which have previously been listed in Chapter ~\ref{sec:problem}. Figure ~\ref{fig:project_requirements} shows the initial list of requirements that I was provided. 
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./assets/images/requirements.png}
@@ -306,7 +310,8 @@ Through the use of the Trello board (Figure ~\ref{fig:kanbanBoardFinal}) I have 
 
 \subsection{Project Plan}
 The main milestones of my project are outlined in the Gannt Chart in Appendix~\ref{app:ganntchart}. 
-
+\\
+\\
 The main milestones identified are: 
 \subsubsection{Research}
 I have so far completed this section of the project which involved research into the background of my project as well as looking into previous solutions that have been developed which offer similar functionality to the system I intend to produce.
@@ -371,7 +376,7 @@ interface design in Balsamiq and the final user interface that was produced.
 When developing for the mobile application a key focus was the fact that I was working with a smaller screen. This meant that I needed to limit the information which is displayed on the screen whilst still providing the user with all of the information that they require. In order to do this the user flow through the application needed to be considered as well as the data which would be required by the user.
 \\
 \\
-As you can see in Figure ~\ref{fig:UIDesignExample} the mobile application screens have been deliberately kept simple with very few options for the user to choose from. On the category screen the user is able to only view the categories that are available too them. Once the user has chosen their category then they are directed to the item list screen which filters all items which are going to expire by the category that they have chosen to ensure that the user only views the items that are applicable to their current search.
+As you can see in Figure~\ref{fig:UIDesignExample} the mobile application screens have been deliberately kept simple with very few options for the user to choose from. On the category screen the user is able to only view the categories that are available too them. Once the user has chosen their category then they are directed to the item list screen which filters all items which are going to expire by the category that they have chosen to ensure that the user only views the items that are applicable to their current search.
 
 \begin{figure}[H]
     \centering
@@ -380,7 +385,7 @@ As you can see in Figure ~\ref{fig:UIDesignExample} the mobile application scree
     \label{fig:UIDesignExample}
 \end{figure}
 
-When considering the UI design of the application I wanted to also ensure that the application was visually appealing to the user and as mentioned above not overwhelming. In order to achieve my aim I have had to do some research into how to design applications for mobile screens. Through my research I read various articles which stated that I should adhere to the following principles:
+When considering the UI design of the application I wanted to also ensure that the application was visually appealing to the user and as mentioned above not overwhelming. In order to achieve my aim I have had to do some research into how to design applications for mobile screens. Through my research I read various articles [ \cite{mobile-first}, \cite{design-mobile}, \cite{comprehensive-design}] which stated that I should adhere to the following principles:
 
 \begin{itemize}
     \item Navigation throughout the application should be simple.
@@ -388,11 +393,11 @@ When considering the UI design of the application I wanted to also ensure that t
     \item Input from the user should be limited to only the essential information needed from the application.
 \end{itemize}
 
-Figure ~\ref{fig:UIDesignExample} and Appendix ~\ref{appendix:mobileDesign} demonstrate that I have thought about and considered the above points when I have designed the mobile application interface. The user interface designs for the mobile application where then carried over in order to influence the design of the web application which are discussed in the following section.
+Figure~\ref{fig:UIDesignExample} and Appendix ~\ref{appendix:mobileDesign} demonstrate that I have thought about and considered the above points when I have designed the mobile application interface. The user interface designs for the mobile application where then carried over in order to influence the design of the web application which are discussed in the following section.
 
 \subsection{Web Application User Interface Design}
 
-The web application is another touch point for ASDA colleagues. The main difference between the mobile application and the web application is that the web application is more likely to be used by store management and home offic staff. Due to the differing user cases there are some functionality differences between the mobile application and the web application. The main functional differences are:
+The web application is another touch point for ASDA colleagues. The main difference between the mobile application and the web application is that the web application is more likely to be used by store management and home office staff. Due to the differing user cases there are some functionality differences between the mobile application and the web application. The main functional differences are:
 \begin{itemize}
     \item User of the web application will be able to view item and expiry information for different days when using the web application.
     \item Users who are identified as management will be presented with different features which will include a metrics screen and a waste screen.
@@ -416,13 +421,13 @@ The database schema below (See Figure ~\ref{fig:DBSchema}) shows the final desig
 As you can see all of the tables are interrelated in some way with references to other tables. The main table of the database is the store{\_}item table which stores all of the relevant information needed for the store users to be able to see which items are going to expire and contains a foreign key relationship in the form of a one to one relationship with store items and item information in the item table.
 \\
 \\
-The main actions that a user takes are then stored in the store{\_}item{\_}action table which has a many to one foreign key relationship with the store{\_}item table. this allows me to create the relationship between the store items and their relevant actions that have been recorded by users whilst also ensuring that the store items are easy to store and maintain within the DB.
+The main actions that a user takes are then stored in the store{\_}item{\_}action table which has a many to one foreign key relationship with the store{\_}item table. This allows me to create the relationship between the store items and their relevant actions that have been recorded by users whilst also ensuring that the store items are easy to store and maintain within the DB.
 \\
 \\
 There are three tables which have been created as they are potential options available to the user within the application. These are the item{\_}category, status and store tables which are mainly used for the creation of dropdown boxes when the user is choosing various options thoughout the application. The reason for storing the options in seperate tables within the database over hardcoding them in the application is that by abstracting the options into the database I am easily able to edit and update options without having to modify the application code which then means that I do not have to redeploy any applications or interupt any potential user flow which makes the app more user friendly for the potential users.
 \\
 \\
-The final table is the item table. The item table contains all of the time information required for the software system. The table is populated from the large data warehouse which is used to maintain item information across the whole of the ASDA estate. Due to the security issues which I discuss in Chapter 9 I was unable to make use of tdata warehouse feed so I have had to create mock data within the item table.
+The final table is the item table. The item table contains all of the item information required for the software system. The table is populated from the large data warehouse which is used to maintain item information across the whole of the ASDA estate. Due to the security issues which I discuss in Chapter 9 I was unable to make use of the ASDA data warehouse feed so I have had to create mock data within the item table for the purpose of demonstrating the final system.
 
 \chapter{Realisation}
 In the following sections I will discuss the applications which where developed as part of the Xpire system and the development principles which I have applied whilst developing them.
@@ -432,8 +437,8 @@ Both of the front end applications have been written using popular javascript fr
 Native these are both very similar frameworks with minor differences in functionality. React is used for 
 the web application which is hosted via Azure Application Hosting and can be accessed by any browser that
 the user chooses. React Native has been used for the creation of the Xpire mobile application. React Native
-is a framework which enables a developer to write their applications using javascript code and features of
-the framework and then compile the code into Java and Swift so that the resulting IPA and APK can be ran 
+is a framework which enables a developer to write their applications using javascript code and the inbuilt features of
+the framework in order to then compile the code into Java and Swift so that the resulting IPA and APK can be ran 
 on IOs or Android devices respectively.
 \\
 \\
@@ -451,18 +456,16 @@ I have chosen both of these frameworks for the following reasons:
 As well as being developed using similar frameworks both of the front end applications have been developed using similar coding standards.
  In this section I will describe what standards have been used in the front end applications and the benefits that they provide to the application code and lifecycle.
 
-When writing both of the applications I have made use of the 12 factor app approach. The 12 factor app is a software development approach which outlines 12 practices which developers should follow in order to produce high quality applications which are easily picked up by other developers and easily expanded upon. 
-Whilst developing all of my applications I have made use of environment variables in order to store application config, I have seperated the backing services into seperate web services so that they are easily manipulated without having to update the application code and I have made use of codebases which are tracked in version control in order to ensure that I am alwasy able to recall a working version of the code if I accidentally break functionality whilst developing the applications.
-In the following sections I am going to go over how I have made use of the 12 factor app principles and other development principles I have made use of in order to produce high quality enterprise applications.
-abstraction - use the example of the axios request
-componentisation - components e.g. item card or Text component
+When writing both of the applications I have made use of the 12 factor app \cite{twelve-factor} approach. The 12 factor app is a software development approach which outlines 12 practices which developers should follow in order to produce high quality applications which are easily picked up by other developers and easily expanded upon. 
+Whilst developing all of my applications I have made use of environment variables in order to store application config, I have separated the backing services into separate web services so that they are easily manipulated without having to update the application code and I have made use of codebases which are tracked in version control in order to ensure that I am always able to recall a working version of the code if I accidentally break functionality whilst developing the applications.
+In the following sections I am going to go over how I have made use of the 12 factor app principles and other development principles in order to produce high quality enterprise applications.
 
 \subsection{Mobile Application}
 The mobile application of Xpire is the main part of the system which is used by the front of house store colleagues who are working on the shop floor.
 The application has been written using the React-Native JavaScript framework which means that it is compatible with both android and IOs operating systems.
 This means the app can be used on both in store devices as well as colleague and managers personal devices as part of the BYOD (Bring Your Own Device) scheme. 
 
-The application is capable of communicating with the back end web services via Restful CRUD requests which ensures that all user data is as up to date as possible.
+The application is capable of communicating with the back end web services via restful CRUD requests which ensures that all data displayed to the user is as up to date as possible.
 The application also includes a barcode scanner which enables users to easily scan items rather than entering relevant barcode numbers for items that they want to look up. 
 \\
 \\
@@ -479,7 +482,6 @@ Figure ~\ref{fig:IOSScreenshots} shows an example of the IOs version of the apps
 In Appendix ~\ref{appendix:mobileUI} I have outlined three of the potential user scenarios for the application.
 
 Here I will outline each of the user scenarios
-
 
 \begin{figure}[H]
     \centering
@@ -509,7 +511,7 @@ Figure~\ref{appendix:scenario1small} and Appendix ~\ref{appendix:mobileUI}.1 det
 Figure~\ref{appendix:scenario2small} and Appendix ~\ref{appendix:mobileUI}.2 shows another potential way that a user can view the details of an expiring item on the shop floor. By using the barcode scanning functionality of the device camera the user is able to retrieve all potential expiring items that match the barcode which is scanned so they can view the details of the store items which are contained in the Xpire database. The process flow is:
 \begin{itemize}
     \item The user authenticates themselves and is provided access to the main page of the application as in scenario 1. 
-    \item Because the user has the item in front of them they are able to select the "Scan" option from the home screen.
+    \item As the user has the item in front of them they are able to select the "Scan" option from the home screen.
     \item The user is redirected to the scanning view which opens up the camera of the device and makes use of the barcode scanning functionality of the application.
     \item The user scans the barcode of the item. At this point the application makes a request to the web services which return all of the store items that match the provided barcode. 
     \item The user chooses the store item that they would like to view. Whilst each store item may have the same barcode they will each have different expiry dates which match the products on the shelves. 
@@ -544,7 +546,7 @@ Figure ~\ref{fig:iosVars} shows the contents of the IOs environment variables in
     \label{fig:iosVars}
 \end{figure}
 
-The env file is then picked up at compile time and the values are inserted into the parts of the code where the configuration is referenced. Figure ~\ref{fig:iosScript} is an example of one of the compile script which takes in the environment variable files for that particular application build.
+The environment variable file is then picked up at compile time and the values are inserted into the parts of the code where the configuration is referenced. Figure ~\ref{fig:iosScript} is an example of one of the compile scripts which takes in the environment variable files for that particular application build.
 \begin{figure}[H]
     \centering
     \frame{\includegraphics[width=10cm]{./assets/images/iosScript.png}}
@@ -559,7 +561,7 @@ the code that requires it. Abstraction is beneficial to the code base because it
 throughout the application without the duplication of code which would be needed if the functionality was not abstracted.
 Abstraction also means that the code becomes more readable and easier to understand for other developers. 
 This is because the code that the developer is reading only relates to that one function instead of potentially 
-relating to multiple pieces of functionality.
+relating to multiple pieces of functionality and hence complexity of the code base is reduced. \cite{abstraction}
 \\
 \\
  Figure ~\ref{fig:request} is an example of the abstraction used within both
@@ -574,7 +576,7 @@ which is then exported so that it can be imported into any other file and called
 \end{figure}
 
 In the request example the request function is called from any of the redux actions which want to make an http request to the
-backend server. Figure  shows the action making use of the imported request functionality to make a request 
+backend server. Figure ~\ref{fig:actionExample} shows the action making use of the imported request functionality to make a request 
 for the storeItemSummary list, this is an example of how requests to the web services are made in order to retrieve the data which the application
 needs to display for the user.
 
@@ -586,8 +588,8 @@ needs to display for the user.
     \end{figure}
 
 \subsubsection{Componentisation}
-A further development principle which I have made use of in the development of my application is componentisation. Componentisation is very similar to abstraction where the functionality of a section of the application is abstracted into a component. This component can then be referenced throughout the code base in multiple locations. Once referenced then the component will be rendered in the UI of the application where ever the developer intends. Componentisation shares many benefits with abstraction where the component can be reused or shared amongst applications, can be used multiple times throughout an application without duplication of code and finally reduces the over all amount of code which the developers need to manage which makes the development and troubleshooting of applications easier and more maintainable. 
-Figure ~\ref{fig:textComponent} is a simple example of how I have abstracted out multiple forms of text into a text component. this component allows me to standardise how text is rendered and displayed to the user but also means that I do not have to duplicate the code for stylings and alignment across all instances throughout the code base because the component is completely reusable throughout my application.
+A further development principle which I have made use of through the development of my application is component based software engineering or componentisation \cite{component}. Componentisation is very similar to abstraction where the functionality of a section of the application is abstracted into a component. This component can then be referenced throughout the code base in multiple locations. Once referenced then the component will be rendered in the UI of the application where ever the developer intends. Componentisation shares many benefits with abstraction where the component can be reused or shared amongst applications, can be used multiple times throughout an application without duplication of code and finally reduces the over all amount of code which the developers need to manage which makes the development and troubleshooting of applications easier and more maintainable. 
+Figure ~\ref{fig:textComponent} is a simple example of how I have abstracted out multiple forms of text into a text component. This component allows me to standardise how text is rendered and displayed to the user but also means that I do not have to duplicate the code for stylings and alignment across all instances throughout the code base because the component is completely reusable throughout my application.
 
 \begin{figure}[H]
     \centering
@@ -612,14 +614,14 @@ Appendix ~\ref{appendix:webUI} details the screen shots of a users journey throu
 As was mentioned previously the web application contains some extra functionality which the mobile application does not currently offer.
 
 This functionality includes the ability to query for items which are expiring on specific dates which is chosen by the user on the homepage. This feature allows users to view items which are going to expire in the future or view items which have previously expired and view what actions where taken against them by store colleagues.
-other functionality also includes the ability to change stores and view items which are expiring in other stores. 
+Other functionality also includes the ability to change stores and view items which are expiring in other stores. 
 
 \section{Web Services}
-In order to manage the communication between the front end applications and the database I have written web services in Java using the Spring Boot framework. 
+In order to manage the communication between the front end applications and the database I have written web services in Java using the Spring Boot framework \cite{spring}. 
 The application has been designed using the "repository pattern" which is discussed in the Gang of Four Book, Design Patterns: Elements of Reusable Object-Oriented Software\cite{gamma1994design} which creates an interface between the front end user and the database. This enables the system to ensure that the data being provided from the front end application matches the expect input and data types that is expected by the database tables. The level of abstraction also allows the developer to manipulate and control the data after is has been retrieved from the database but prior to it being returned to the front end application.
 
 \subsubsection{Documentation of the Web Services}
-All of the web services that are available have been documented using the swagger plugin which has enabled me to easily document all of the endpoints that I make use of in the web services. this documentation allows other future developers to easily make use of the web services in their own front end application by providing them with the endpoint URI, the expected parameters and the responses which are provided under certain situations. Appendix ~\ref{appendix:webservices} details how the Swagger UI documentation is displayed and how a developer can make use of the documentation in order to view details about the services and test the relevant services.
+All of the web services that are available have been documented using the Swagger\cite{swagger} plugin which has enabled me to easily document all of the endpoints that I make use of in the web services. Documentation allows other future developers to easily make use of the web services in their own front end application by providing them with the endpoint URI, the expected parameters and the responses which are provided under certain situations. Appendix ~\ref{appendix:webservices} details how the Swagger UI documentation is displayed and how a developer can make use of the documentation in order to view details about the services and test the relevant services.
 
 \subsubsection{Handling of Environment Variables}
 As discussed in the front end applications I have also made use of environment variables in order to manage application configuration values between the different environments. This ensures that the configuration is not hardcoded and can easily be updated or replaced on compile of the web services code. It enables me to easily connect the application to different data sources so that data can be kept separate in other environments for example data in the dev environment does not accidentally make it into the production environment. 
@@ -635,17 +637,14 @@ The majority of the testing of the application have been completed using Manual 
 All of the automated tests should be ran whenever the application sourcecode is updated and any artifacts are produced.
 \\
 \\
-In order to test the web services I have made use of an insomnia which is a REST client which allows developers to test all of the application endpoints. As discussed I have also made use of swaggerUI which as well as documenting endpoints also allows developers to test APIs in order to see how they work and what parameters are required. 
+In order to test the web services I have made use of an Insomnia\cite{insomnia} which is a REST client which allows developers to test all of the application endpoints. As discussed above I have also made use of SwaggerUI which as well as documenting endpoints also allows developers to test APIs in order to see how they work and what parameters are required. 
 
 \chapter{Evaluation}
 \section {Successes of the project}
 Overall based on the aims of the project I believe that the project has been a success. I have produced a system which comprises of several different applications whilst making use of several different programming languages and design concepts. 
- Whilst there have been issues over the course of the project I have received positive feedback from the Project Manager colleagues within ASDA who have been overseeing the project.
+Whilst there have been issues over the course of the project I have received positive feedback from the Project Manager colleagues within ASDA who have been overseeing the project.
 I believe that with more time to go through the correct security checks that are mentioned in the challenges section of this report that the project would demonstrate a reduction in 
 colleague time spent checking waste stock and an overall increase in colleague performance. 
-\\
-\\
-In the dissertation which will follow this report I plan on going through the individual aspects of the project and identifying how I believe that they have been positively addressed.
 
 \section {Challenges of the Project}
 Throughout the project there have been issues which have arisen as the solution has been developed. In the early stages of the project it was identified that due to data security and authentication security utilised by ASDA I would be unable to make use of ASDAs data and authentication systems. This has presented various different issues which include:
@@ -657,7 +656,8 @@ Throughout the project there have been issues which have arisen as the solution 
 \end{itemize}
  In order to over come these potential blockers I decided that I would work around the issues and instead create mock functionality and make use of test data. This meant that instead of making use of the ASDA authentication systems I have mocked out this functionality so that I can easily make use of it in the future when I productionise the application. 
  Due to the fact that I was unable to make use of the ASDA data I created a small subset of data which is similar in content to the actual ASDA data so that I will be able to easily modify the data structure in the database in order to make the Xpire system work seemlessly with the ASDA data stores. 
-
+\\
+\\
  All of these solutions are work arounds to issues which would of been avoided if the application had been written within ASDA. In Chapter 12 I discuss steps which are required in order to make the Xpire software system work in a production environment. This will include the replacement of all mocked solutions for the actual working functionality. 
 
 
@@ -686,11 +686,11 @@ This functionality gives colleagues an additional insight into what is happening
 \\
 \\
 Other positive feedback that was called out from the ASDA colleagues was the designs of the applications and the fact that the store users are not overwhelmed with information. 
-This feedback is especially relevant because it ties into the design principles which I previously discussed in Chapter 7 of this dissertation. 
+This feedback is especially relevant because it ties into the design principles which I previously discussed in Chapter 4 of this dissertation. 
 % talk about improvements that are raised and relate them to the potential future works. 
 \\
 \\
-The ASDA colleagues also raised some potential improvements / additional features which could be added to the Xpire application. I am glad to say that the improvements which the ASDA colleagues have mentioned are focused on the implementation of new functionality instead of addressing weaknesses / issues with the functionality that I have written in order to address the initial problem statement. The recommendations that the colleagues have raised are discussed in Chapter 12 of this dissertation.
+The ASDA colleagues also raised some potential improvements / additional features which could be added to the Xpire application. I am glad to say that the improvements which the ASDA colleagues have mentioned are focused on the implementation of new functionality instead of addressing weaknesses / issues with the functionality that I have written in order to address the initial problem statement. The recommendations that the colleagues have raised are discussed in Chapter 9 of this dissertation.
 
 \chapter{Learning Points}
 Over the period of the project several technologies have been used within the software system
@@ -702,7 +702,7 @@ complete a similar project.
 % Java Spring Boot
 \section{Java}
 The web services are a central part of the system. I decided that in order to write a truly scalable
-and enterprise worthy application I would write the RESTful web services in Java using the Spring Boot framework.
+and enterprise worthy application I would write the RESTful web services in Java using the Spring Boot\cite{spring} framework.
 \\
 \\
 I chose Spring Boot based on the fact that it a widely adopted java framework which is already utilised
@@ -711,7 +711,7 @@ boot however I have never initialised an application or written an entire suite 
 \\
 \\
 Spring Boot was an interesting framework to work with as there was plenty of documentation available online,
-the process of initialising the application was straightforward using the Spring Boot Initializr TODO:insert reference to Initializr. 
+the process of initialising the application was straightforward using the Spring Boot Initializr. 
 Spring Boot is an opinionated object orientated framework which is very different to my typical background 
 of JavaScript Node applications. In order to efficiently make use of Spring Boot I have had to learn the nuances
 of the framework such as how to architect and organise the application structure as well as 
@@ -725,10 +725,9 @@ application code. It also ensures that the objects which are being submitted to 
 match the format that the database is expecting.
 \\
 \\
-
 Overall I would say that the use of Java Spring Boot was really beneficial to the project and my own personal development. I have furthered 
 my knowledge of creating RESTful services and object orientated programming. The use of Spring Boot has forced me to look into development 
-principles and design patterns that I haven't previously been exposed to which will improve my knowledge of software engineer and improve 
+principles and design patterns that I haven't previously been exposed to which will improve my knowledge as a software engineer and improve 
 the quality of the applications that I write in the future.
 
 
