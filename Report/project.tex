@@ -623,24 +623,42 @@ Throughout the project there have been issues which have arisen as the solution 
     \item Application and Database hosting
     \item Store Usage
 \end{itemize}
+ In order to over come these potential blockers I decided that I would work around the issues and instead create mock functionality and make use of test data. This meant that instead of making use of the ASDA authentication systems I have mocked out this functionality so that I can easily make use of it in the future when I productionise the application. 
+ Due to the fact that I was unable to make use of the ASDA data I created a small subset of data which is similar in content to the actual ASDA data so that I will be able to easily modify the data structure in the database in order to make the Xpire system work seemlessly with the ASDA data stores. 
 
-All of these issues have been over come or worked around in order to produce a working software system. Each of the Issues listed above will be discussed in more detail along with the relevant work arounds in the dissertation of this project.
+ All of these solutions are work arounds to issues which would of been avoided if the application had been written within ASDA. In Chapter 12 I discuss steps which are required in order to make the Xpire software system work in a production environment. This will include the replacement of all mocked solutions for the actual working functionality. 
 
 
 \section{Colleague Feedback}
-Unfortunately due to the limitations that have been mentioned above and will be expanded upon in my dissertation I was unable to place the system into a production ASDA store.
-Because of this I have had to re-assess how I will gather feedback on the system. The project will now be assessed by ASDA colleagues and managers based on demonstrations of the application within different user scenarios. 
-In my dissertation I will discuss the feedback which I receive and summarise the positives and potential improvements that the ASDA colleagues raise in their feedback.
+Unfortunately due to the limitations that have been mentioned above I was unable to place the system into a production ASDA store.
+Because of this the project will now be assessed by ASDA colleagues and managers based on demonstrations of the application within different user scenarios. 
+\\
+\\
+Figure ~\ref{fig:feedback} summarise the the over all feedback from ASDA colleagues after a presentation that I performed which demonstrated the capabilities of the system I have produced.
+
 
 % Add in feedback and critical analysis of feedback from Philippa and Holly. Must be anonymous. talk about current implementation and differences between solution developed.
 \begin{figure}[H]
     \centering
     \includegraphics[width=15cm]{./assets/images/feedback.png}
-    \caption{Xpire feedback collated from ASDA colleagues.}
+    \caption{Anonymised Xpire feedback collated from ASDA colleagues.}
     \label{fig:feedback}
 \end{figure}
 % talk about functionality that is positive and the feedback given
+The project team overall have been very positive about the software system which I have been able to produce within the time frame of the project. 
+As is highlighted in Figure ~\ref{fig:feedback} they have appreciated the design and implementation of the applications as well as the output that has been produced.
+It has also been verbally discussed that the application and the data that is gathered from the Xpire applications is more detailed and coherent than the 
+data that is currently gathered within ASDA. The main functionality that adds new capabilities for colleagues in the ASDA offices and stores is the ability
+to know what is actually happening with items when they are wasted or marked down. 
+This functionality gives colleagues an additional insight into what is happening with products in stores and could potentially provide colleagues with information that can drive down and reduce waste within the ASDA supply chain. 
+\\
+\\
+Other positive feedback that was called out from the ASDA colleagues was the designs of the applications and the fact that the store users are not overwhelmed with information. 
+This feedback is especially relevant because it ties into the design principles which I previously discussed in Chapter 7 of this dissertation. 
 % talk about improvements that are raised and relate them to the potential future works. 
+\\
+\\
+The ASDA colleagues also raised some potential improvements / additional features which could be added to the Xpire application. I am glad to say that the improvements which the ASDA colleagues have mentioned are focused on the implementation of new functionality instead of addressing weaknesses / issues with the functionality that I have written in order to address the initial problem statement. The recommendations that the colleagues have raised are discussed in Chapter 12 of this dissertation.
 
 \chapter{Learning Points}
 Over the period of the project several technologies have been used within the software system
@@ -749,14 +767,24 @@ standards and development abilities.
 
 \chapter{Conclusions}
 % How do I feel the application has been completed?
+This chapter contains my personal conclusion of how I believe the project has gone. The process of productionisation of the applications is also discussed as well as the potential future work that could also be completed to add further functionality to the Xpire system. 
 \section{Personal Conclusion}
+My personal conlusion of this project is that it has been a successful endeavour. At the beginning of the project I was provided with a fairly vague list of requirements and I have architected and produced a software system which meets the initial requirements I was given. I believe that whilst I may not have produced a system which is exactly the solution I initially designed in the design phase of the project I have produced an in depth system which makes use of multiple technologies. 
+I have thoroughly enjoyed the project as it has presented problems which I have not previously been faced with and it has provided me the opportunity to learn new programming techniques and work with new technologies. If I was to complete the project again I think I would focus on doing more with the data that is gathered by my application show that I can show how the applications input is able to produce informative metrics. 
 % What would it take to put the application into production
 \section{Productionisation}
 % What extra work could be completed in order to finish the application?
+As is mentioned in Chapter 9 I was unable to place the Xpire system into a production store within the time frames of the project. In this section I will discuss what steps are needed in order to productionise the application and release into an ASDA store. 
 \subsection{Environment Setup}
+The application at the moment works in 2 environments. The local environment on my development machine and the development environment which is hosted on Azure. In order for the system to be available to colleagues in stores the docker image of the application would need to be deployed into three more environments. It would need to be deployed into test environment where all testing is completed to ensure the system works as expected. Pre-prod environment which is a mirror of the production environment to ensure the applications function exactly as expected and the final environment would be the production environment where the applications would be released in a phased approach. 
 \subsection{Testing}
-\subsection{Analysis}
+As was mentioned in Chapter 8 the testing of the system has mainly been based on functional testing and endpoint testing through the use of REST clients and Swagger. In order for the Xpire system to be deployed into a production store there would also need to be much more thorough unit testing of the mobile, web and backend services as well as complete end to end testing of the whole system. This would probably take the most amount of time to reach a suitable test coverage for production deployment.
+
 \subsection{Monitoring \& Alerting}
+The final additional feature that would be needed for productionisation would be the addition of monitoring and alerting to all of the applications. For the web applications and the web services this will be quite straight forward due to the fact that I have made use of Docker to containerise the applications which also means that it is easy to capture logs from the applications. The mobile applications will be slightly more difficult and will require additional development.
+\\
+\\
+In summary there is still a significant amount of work that would need to be completed in order to make the applications production ready. I would estimate that it would probably take around 2 to 3 months in order to make the application 100\% production ready. This could potentially be shortened by adding more developers but there would also be additional overhead in getting the new developers up to speed.
 
 
 \section{Potential Expansions}
@@ -778,6 +806,8 @@ could then be used to inform store managers and the ASDA inventory management sy
 occuring and allow for more accurate stock levels to reduce potential waste in the future.
 
 \subsection{Item Location}
+Within an ASDA store it is possible that an item can potentially be in multiple locations. It would be useful if the Xpire application as well as telling the store colleagues which items are about to expire would also tell the colleagues where the items are located in the store so that they can easily locate the items which are expiring. 
+This functionality could be as simple as listing the aisles and columns where the item is or it could be as complicated as displaying the location of the items on a store map which is rendered on the users device. The functionality will make the jobs of store colleagues easier and will reduce the amount of time that is wasted in store by colleagues who are looking for items. 
 
 \subsection{Item Prioritisation}
 %%%%   REFERENCES
