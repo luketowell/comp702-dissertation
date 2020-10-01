@@ -35,8 +35,10 @@ Luke Michael Towell
 \\    \\    \\
 Dissertation
 \\    \\
+Word Count: 9244
+\\    \\
 Submitted to 
-\\    \\    \\ 
+\\    \\
 The University of Liverpool
 \\    \\
 \\    \\
@@ -74,7 +76,8 @@ into an ASDA store in the future. The requirements and periodic demoing of the p
 be provided to ASDA technology colleagues throughout the period of the project.
 \\
 \\
-More writing about the evaluation of the project and the final outcomes. 
+At the end of this project a software system has been produced which makes use of Java web services and React front end technologies. This report details the design process of the system which has been produced whilst also discussing the development approaches that where taken during the technical implementation.
+The overall learning outcomes are discussed which highlights which new technologies have been used throughout the project. At the end of this dissertation the project is concluded and potential further expansions of the system are listed and detailed. 
 \newpage
 
 \chapter*{Code Repositories}
@@ -219,6 +222,7 @@ I have also added labels to each of the cards so that I am easily able to identi
 This has made it easier to look up which cards need working on and which features still require development. 
 
 
+
 \chapter{Background}
 
 At the moment sustainability and environmental responsibility are very prevelant in our day
@@ -282,6 +286,7 @@ work inside the ASDA ecosystem without the need for any extra development costs 
 a third party application. 
 
 \section{Project requirements gathering}
+\subsection{Requirements Management}
 
 As well as looking at examples of other applications which offer similar functionality to my proposed
 application I also gathered requirements from ASDA employees who are familiar with the requirements 
@@ -289,14 +294,36 @@ of the project. Each of these requirements where broken down into development ca
 the project Trello board. Each card contains the aim of the card, the requirement that the development
 will provide and the functionality which will be available once the card has been completed. 
 
-% TODO: insert a figure of a well documented card
+At the beginning of the project I was provided with a short document which detailed the overall requirements of the project. These requirements are what became the project aims which have previously been listed in Chapter 1~\ref{sec:problem}. Figure ~\ref{fig:project_requirements} shows the initial list of requirements that I was provided. 
 
-% TODO: Insert notes from discussion with Philippa to document the gathering of requirements from members of the ASDA project management staff. 
+\begin{figure}[H]
+    \includegraphics[width=\linewidth]{./assets/images/requirements.png}
+    \caption{Screen shot of project requirments documentation}
+    \label{fig:project_requirements}
+\end{figure}
 
-% TODO: Insert potential notes from confluence. 
+Through the use of the Trello board (Figure ~\ref{fig:kanbanBoardFinal}) I have been able to clearly document the requirements of the applications which has allowed me to easily communicate what I am working on with the stakeholders of the system. This has assisted in meetings with ASDA colleagues when I have had to explain the development process and indicate how progress was being made.
 
-Through the use of the Trello board I have been able to clearly document the requirements of the applications which has allowed me to easily communicate what I am working on with the stakeholders of the system. This has assisted in meetings with ASDA colleagues when I have had to explain the development process and indicate how progress was being made.
+\subsection{Project Plan}
+The main milestones of my project are outlined in the Gannt Chart in Appendix~\ref{app:ganntchart}. 
 
+The main milestones identified are: 
+\subsubsection{Research}
+I have so far completed this section of the project which involved research into the background of my project as well as looking into previous solutions that have been developed which offer similar functionality to the system I intend to produce.
+\subsubsection{Synopsis}
+This section will be complete with the production of this document which details what the project aims are and an initial plan of how I will complete my aims.
+\subsubsection{Design}
+The design phase of the project is going to focus on the production of user interfaces for the various applications within the system.
+\subsubsection{Development Sprints}
+The development section is the longest continuous section of the project which I plan on splitting into eight, one week iterations which will include planning, development and demoing of individual features. This has been dicussed further in chapter~\ref{chap:intro}.
+\subsubsection{Testing}
+As part of the agile methodology I will be testing my code as I write it in each iteration.
+\subsubsection{Demo / Deployment}
+I have included a main milestone which is the final demo of the complete working system to the project stakeholders in order to gain final feedback which will be used to assess wether the project has completed its main aims. 
+\subsubsection{Write up}
+The write up of the project documentation is the longest individual section of my project as I aim to write up the documentation as I work through the project. 
+\subsubsection{Dissertation proof read and finalisation}
+The final stage of the project includes the proof reading of my final report and final adjustments prior to submission.
 \chapter{Ethical Use Of Data}
 \section{Data used in the system}
 The data used in the system will be item based information which will include a unique identifier
@@ -320,16 +347,17 @@ there is no need to need to complete the Ethical Approval Form.
 \\
 The only human data that will be used within this project is the feedback and opinions
 of employees for ASDA which will be used in order to assess wether the goals of the 
-project have been met. The consent of those whose feedback I will be using will be 
-collected as and when it is required and Each individual will complete a consent form
-prior to their opinions being included in the final report.
+project have been met. All information and opinions which have been gathered about the final solution which I have produced have been anonymised and there is no personally identifiable information presented within this dissertation.
+\\
+\\
+Due to the fact that I have been unable to make use of the ASDA authentication methods which I discuss later in the dissertation I have also not used any potentially private information e.g. usernames.
 
 
 % TODO: CITE SPECIFICATION AND DESIGN DOCUMENT
 \chapter{Design}
 The aim of this project from the outset was to create a software system which makes use of multiple applications
  to give the in store user a clean and easy to use way of managing in-store waste. In the following chapter I 
- discuss what has been produced and what I will discuss in my dissertation.
+ discuss the applications which have been developed as part of the project as well as the design choices that I have made whilst producing the Xpire system.
 
 \section{User Interface Design}
 
@@ -340,7 +368,9 @@ interface design in Balsamiq and the final user interface that was produced.
 
 \subsection{Mobile Application User Interface Design}
 
-When developing for the mobile application a key focus was the fact that I was working with a smaller screen. This meant that I needed to limit the information which is displayed on the screen whilst still providing the user with all of the information that they require. In order to do this the user flow through the application needed to be considered as well as the data which would be required by the user. ]
+When developing for the mobile application a key focus was the fact that I was working with a smaller screen. This meant that I needed to limit the information which is displayed on the screen whilst still providing the user with all of the information that they require. In order to do this the user flow through the application needed to be considered as well as the data which would be required by the user.
+\\
+\\
 As you can see in Figure ~\ref{fig:UIDesignExample} the mobile application screens have been deliberately kept simple with very few options for the user to choose from. On the category screen the user is able to only view the categories that are available too them. Once the user has chosen their category then they are directed to the item list screen which filters all items which are going to expire by the category that they have chosen to ensure that the user only views the items that are applicable to their current search.
 
 \begin{figure}[H]
@@ -350,7 +380,7 @@ As you can see in Figure ~\ref{fig:UIDesignExample} the mobile application scree
     \label{fig:UIDesignExample}
 \end{figure}
 
-When considering the UI design of the application I wanted to also ensure that the application was visually appealing to the user and as mentioned above not overwelming. In order to achieve my aim I have had to do some research into how to design applications for mobile screens. Through my research I read various articles which stated that I should adhere to the following principles:
+When considering the UI design of the application I wanted to also ensure that the application was visually appealing to the user and as mentioned above not overwhelming. In order to achieve my aim I have had to do some research into how to design applications for mobile screens. Through my research I read various articles which stated that I should adhere to the following principles:
 
 \begin{itemize}
     \item Navigation throughout the application should be simple.
@@ -395,7 +425,7 @@ There are three tables which have been created as they are potential options ava
 The final table is the item table. The item table contains all of the time information required for the software system. The table is populated from the large data warehouse which is used to maintain item information across the whole of the ASDA estate. Due to the security issues which I discuss in Chapter 9 I was unable to make use of tdata warehouse feed so I have had to create mock data within the item table.
 
 \chapter{Realisation}
-In the following sections I will discuss the applications which where developed as part of the Xpire system.
+In the following sections I will discuss the applications which where developed as part of the Xpire system and the development principles which I have applied whilst developing them.
 
 \section{Front End Applications}
 Both of the front end applications have been written using popular javascript frameworks: React and React 
@@ -601,9 +631,11 @@ By using Docker I am able to run the application in isolation on the Kubernetes 
 
 
 \section{Testing of the Applications}
-Manual Testing
-Automated service testing using Swagger and Insomnia.
-Ideally would have liked to write both unit tests and end to end tests.
+The majority of the testing of the application have been completed using Manual testing of each applications functionality. This approach is not ideal as it is time consuming and costly however unfortunately it was impracticle to write all unit tests and automated tests whilst developing all of the applications required for the Xpire system. In the future and in order to put the application into a production environment there is a requirement to ensure that each component and feature is covered via unit tests and that the whole application is thoroughly covered by automated end to end tests. 
+All of the automated tests should be ran whenever the application sourcecode is updated and any artifacts are produced.
+\\
+\\
+In order to test the web services I have made use of an insomnia which is a REST client which allows developers to test all of the application endpoints. As discussed I have also made use of swaggerUI which as well as documenting endpoints also allows developers to test APIs in order to see how they work and what parameters are required. 
 
 \chapter{Evaluation}
 \section {Successes of the project}
@@ -809,7 +841,6 @@ occuring and allow for more accurate stock levels to reduce potential waste in t
 Within an ASDA store it is possible that an item can potentially be in multiple locations. It would be useful if the Xpire application as well as telling the store colleagues which items are about to expire would also tell the colleagues where the items are located in the store so that they can easily locate the items which are expiring. 
 This functionality could be as simple as listing the aisles and columns where the item is or it could be as complicated as displaying the location of the items on a store map which is rendered on the users device. The functionality will make the jobs of store colleagues easier and will reduce the amount of time that is wasted in store by colleagues who are looking for items. 
 
-\subsection{Item Prioritisation}
 %%%%   REFERENCES
 
 %%%%  Section for references, using the \bibitem directive to 
@@ -824,6 +855,17 @@ This functionality could be as simple as listing the aisles and columns where th
 \newpage
 \addcontentsline{toc}{chapter}{Appendices}
 \begin{appendix}
+    \chapter{Xpire Project Gannt Chart}\label{app:ganntchart}
+    \begin{figure}[ht]
+    \centering
+    \includegraphics[scale=1.0]{./assets/images/gannt1.png}
+    {\caption*{Xpire Project Gannt Chart June - July}}
+    \end{figure}
+    \begin{figure}[ht]
+    \centering
+    \includegraphics[scale=1.0]{./assets/images/gannt2.png}
+    {\caption*{Xpire Project Gannt Chart August - September}}
+    \end{figure}
     \chapter{User Interface Designs}
     \section{Mobile Designs}
     \label{appendix:mobileDesign}
