@@ -764,14 +764,14 @@ The project was focused on the production of a software system which can be acce
  With this in mind design and usability was a key focus of the project to ensure that the system was easy to use and simple to understand. 
  \\
  \\
- As can be seen in figure TODO:(insert link to designs) and is discussed in the design chapter of this dissertation the applications have deliberately been kept simple and minimalistic to ensure that the user is not overwhelmed with unnecessary information.
+ As can be seen in Appendix ~\ref{appendix:mobileDesign} and is discussed in the design chapter of this dissertation the applications have deliberately been kept simple and minimalistic to ensure that the user is not overwhelmed with unnecessary information.
   I believe that this approach has enabled me to develop a system which specifically calls out to the standard of making IT for everyone by promoting equal access to the application and therefor equal access to the benefits that the application offers. 
 \section{Show what you know, learn what you don't}
 This project has been produced solely by myself and all work on the applications has been written and architected by the author. 
 
 Whilst working through the project there have been various skills / languages that I have not been familiar with which I have had
 to research and learn whilst developing the applications which form part of the system. The skills which I have had to focus on include
-creating writing applications written in Java which is a language I have had very little previous experience with and the creation and architecture of a SQL based Database.
+writing applications in Java which is a language I have had very little previous experience with and the creation and architecture of a SQL based Database.
 These points have previously been discussed in more detail in chapter 7 however I feel like they are an excellent example of how 
 I have developed my professional knowledge of two technologies in order to complete the project.
 \\
@@ -784,32 +784,36 @@ This has involved the use of professional meetings and discussions which are fur
 \section{Respect the organisation or individual you work for}
 Due to the fact that this software system has been created for the use of a large national retailer it was essential that the produced system is in tune with the organisations values and principles. 
 As part of ensureing respect for the organisation that I work for I have diligently ensured that any functionality which I was unable to expose for security reasons this has included the authentication of the application as well as the data structures which are used internally has been mocked out.
-
+\\
+\\
 I have maintained respectful and purposeful communication using regular meetings with the project management and professional resource provided by ASDA to ensure that the project was on track and was meeting the requirements that where outlined initially.
-
+\\
+\\
 Finally I completely accept all responsibility for the software system that has been produced as part of this project. 
 
 \section{Keep IT real, Keep IT professional. Pass IT on}
 Throughout the development of the software system produced in this project I believe I have represented the BCS principle of 
 "Keep IT real, Keep IT professional. Pass IT on" by ensuring that I have remained professional in all communications between
 myself and others involved in the project. I have ensured that any knowledge that I have learned is well documented in order
-to be easily passed onto other software engineers and In summary I believe that the project has improved my personal professional
+to be easily passed onto other software engineers and in summary I believe that the project has improved my personal professional
 standards and development abilities.
 
 \chapter{Conclusions}
 % How do I feel the application has been completed?
 This chapter contains my personal conclusion of how I believe the project has gone. The process of productionisation of the applications is also discussed as well as the potential future work that could also be completed to add further functionality to the Xpire system. 
 \section{Personal Conclusion}
-My personal conlusion of this project is that it has been a successful endeavour. At the beginning of the project I was provided with a fairly vague list of requirements and I have architected and produced a software system which meets the initial requirements I was given. I believe that whilst I may not have produced a system which is exactly the solution I initially designed in the design phase of the project I have produced an in depth system which makes use of multiple technologies. 
+My personal conclusion of this project is that it has been a successful endeavour. At the beginning of the project I was provided with a fairly vague list of requirements and I have architected and produced a software system which meets the initial requirements that where provided. I believe that whilst I may not have produced a system which is exactly the solution I initially designed in the design phase of the project I have produced an in depth system which makes use of multiple technologies. 
+\\
+\\
 I have thoroughly enjoyed the project as it has presented problems which I have not previously been faced with and it has provided me the opportunity to learn new programming techniques and work with new technologies. If I was to complete the project again I think I would focus on doing more with the data that is gathered by my application show that I can show how the applications input is able to produce informative metrics. 
 % What would it take to put the application into production
 \section{Productionisation}
 % What extra work could be completed in order to finish the application?
 As is mentioned in Chapter 9 I was unable to place the Xpire system into a production store within the time frames of the project. In this section I will discuss what steps are needed in order to productionise the application and release into an ASDA store. 
 \subsection{Environment Setup}
-The application at the moment works in 2 environments. The local environment on my development machine and the development environment which is hosted on Azure. In order for the system to be available to colleagues in stores the docker image of the application would need to be deployed into three more environments. It would need to be deployed into test environment where all testing is completed to ensure the system works as expected. Pre-prod environment which is a mirror of the production environment to ensure the applications function exactly as expected and the final environment would be the production environment where the applications would be released in a phased approach. 
+The application at the moment works in 2 environments. The local environment on my development machine and the development environment which is hosted on Azure. In order for the system to be available to colleagues in stores the docker image of the application would need to be deployed into three more environments. The application would need to be deployed into test environment where all testing is completed to ensure the system works as expected. Pre-prod environment which is a mirror of the production environment to ensure the applications function exactly as expected and the final environment would be the production environment where the applications would be released in a phased approach. 
 \subsection{Testing}
-As was mentioned in Chapter 8 the testing of the system has mainly been based on functional testing and endpoint testing through the use of REST clients and Swagger. In order for the Xpire system to be deployed into a production store there would also need to be much more thorough unit testing of the mobile, web and backend services as well as complete end to end testing of the whole system. This would probably take the most amount of time to reach a suitable test coverage for production deployment.
+As was mentioned in Chapter 5 the testing of the system has mainly been based on functional testing and endpoint testing through the use of REST clients and Swagger. In order for the Xpire system to be deployed into a production store there would also need to be much more thorough unit testing of the mobile, web and backend services as well as complete end to end testing of the whole system. This would probably take the most amount of time to reach a suitable test coverage for production deployment.
 
 \subsection{Monitoring \& Alerting}
 The final additional feature that would be needed for productionisation would be the addition of monitoring and alerting to all of the applications. For the web applications and the web services this will be quite straight forward due to the fact that I have made use of Docker to containerise the applications which also means that it is easy to capture logs from the applications. The mobile applications will be slightly more difficult and will require additional development.
